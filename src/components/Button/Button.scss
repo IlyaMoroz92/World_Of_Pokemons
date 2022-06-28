@@ -1,0 +1,20 @@
+.button {
+    cursor: pointer;
+
+    &--with-icon {
+        border: none;
+        background-color: inherit;
+    }
+
+    &--with-icon:hover {
+        svg path{
+            fill: red;
+        }
+    }
+
+    svg {
+        vertical-align: middle;
+        width: 30px;
+        height: 30px;
+    }
+}
