@@ -1,0 +1,15 @@
+.header {
+    &__main {
+    background-color: #003149;
+    display: flex;
+    justify-content: space-between;
+    line-height: 84px;
+    height: 84px;
+    }
+
+    svg {
+        /* vertical-align: middle; */
+        width: 25px;
+        height: 25px;
+    }
+}

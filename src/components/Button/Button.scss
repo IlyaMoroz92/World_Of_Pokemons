@@ -1,9 +1,19 @@
 .button {
     cursor: pointer;
+    border: none;
+    background-color: inherit;
 
     &--with-icon {
-        border: none;
-        background-color: inherit;
+        
+        svg path{
+            fill: #003149;
+        }
+
+        &-active {
+            svg path{
+                fill: red;
+            }
+        }
     }
 
     &--with-icon:hover {
@@ -14,7 +24,7 @@
 
     svg {
         vertical-align: middle;
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
     }
 }
