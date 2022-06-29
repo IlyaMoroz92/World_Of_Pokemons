@@ -6,6 +6,7 @@ import { Footer } from './components/Footer'
 import { Picture } from './components/Picture'
 import { Title } from './components/Title'
 import { Likebar } from './components/Likebar'
+import { Card } from './components/Card'
 import { ReactComponent as Pokeball } from './assets/img/pokeball.svg'
 import { ReactComponent as Up} from './assets/img/Up.svg'
 
@@ -17,22 +18,14 @@ function App() {
         <Header/>
       </div>
       <div className="content">
-        <Button
-          className="with-icon-active"
-          icon={<Up />}
-        />
-        <Button
-          className="with-icon"
-          icon={<Pokeball />}
-        />
-        <Picture
-          alt={'Picture'}
-        />
-        <Title
-           /* src={props.src} */
-           text={'Title'}
-        />
-        <Likebar/>
+        <Card/>
+        <Card/>
+        <Card/>
+        <Card/>
+        <Card/>
+        <Card/>
+        <Card/>
+        <Card/>
       </div>
       <div className="footer">
         <Footer/>

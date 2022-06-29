@@ -1,12 +1,15 @@
 .App {
   text-align: center;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 .content {
   flex: 1 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr  1fr;
+  background-color: #e6e6e6;
 }
 
 .footer {
