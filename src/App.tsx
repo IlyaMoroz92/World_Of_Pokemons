@@ -9,6 +9,8 @@ import { Likebar } from './components/Likebar'
 import { Card } from './components/Card'
 import { ReactComponent as Pokeball } from './assets/img/pokeball.svg'
 import { ReactComponent as Up} from './assets/img/Up.svg'
+import {  Outlet } from 'react-router-dom';
+import { Tabs } from './components/Tabs';
 
 function App() {
   
@@ -16,18 +18,14 @@ function App() {
     <div className="App">
       <div className="header">
         <Header/>
-      </div>
+        </div>
       <div className="content">
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
+        <div className='all__wrapper'>
+          <Tabs/>
+          <Outlet/>
+        </div>
       </div>
-      <div className="footer">
+      <div className="footer"> 
         <Footer/>
       </div>
     </div>

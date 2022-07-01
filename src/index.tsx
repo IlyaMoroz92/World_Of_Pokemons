@@ -3,14 +3,41 @@ import ReactDOM from 'react-dom/client';
 import './index.scss';
 import  App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AllPokemons } from "./pages/AllPokemons/allPokemons";
+import { FavoritesPokemons } from "./pages/FavoritesPokemons/favoritesPokemons";
 
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement
 );
 
-root.render(
+/* root.render(
   <React.StrictMode>
     <App />
+  </React.StrictMode>
+); */
+
+root.render(
+  <React.StrictMode>
+    {/* <Provider store={store}> */}
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route path="/" element={<AllPokemons />}/>
+        {/* <Route path="/post/:id" element={<PostPage />} /> */}
+          <Route path="/favorites" element={<FavoritesPokemons />} />
+        </Route>
+        <Route
+            path="*"
+            element={
+              <main style={{ padding: "1rem" }}>
+                <p>404 Not Found</p>
+              </main>
+            }
+          />
+      </Routes>
+    </BrowserRouter>
+    {/* </Provider> */}
   </React.StrictMode>
 );
 

@@ -1,0 +1,25 @@
+.tabs__main {
+    display: flex;
+    justify-content: space-between;
+    max-width: 600px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+
+    * {
+        text-decoration: none;
+    }
+}
+
+.titlenav--tabs {
+    height: 70px;
+    width: 100%;
+}
+
+.titlenav__link--tabs {
+    padding: 0 30px 25px 30px;
+}
+
+.active {
+    border-bottom: 3px solid red;
+}

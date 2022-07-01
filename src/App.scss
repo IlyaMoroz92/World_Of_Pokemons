@@ -7,8 +7,8 @@
 
 .content {
   flex: 1 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr  1fr;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr  1fr; */
   background-color: #e6e6e6;
 }
 
@@ -18,4 +18,9 @@
 
 .header {
   flex: 0 0 auto;
+}
+
+.all__wrapper {
+  width: 80%;
+  margin: 0 auto;
 }
