@@ -7,19 +7,20 @@ import './Card.scss'
 type CardProps = {
     className?: string
     text?: string
+    pokemon?: any
 }
 
-export const Card = (props: CardProps) => {
+export const Card = ({pokemon}: CardProps) => {
     return (
         <div className="card">
-            <h2>ID</h2>
+                <h2>{pokemon.id}</h2>
             <Picture
                 className='card'
-                src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg'
-                alt={'Picture'}
+                src={pokemon.sprites.other.dream_world.front_default}
+                alt={pokemon.name}
             />
             <Title
-                text="Bulba"
+                text={pokemon.name}
             />
             <Likebar/>
         </div>
