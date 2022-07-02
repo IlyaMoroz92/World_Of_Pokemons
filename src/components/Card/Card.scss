@@ -1,6 +1,11 @@
 .picture--card {
     height: 150px;
     width: 150px;
+    cursor: pointer;
+    &:hover {
+        transform: scale(-1, 1);
+    }
+
 }
 
 .card {
@@ -9,5 +14,5 @@
     width: 180px;
     margin: 10px;
     border-radius: 10px;
-    background: linear-gradient(0deg, #e3e3e3, #010d4678, #e1e1e1);
+    background: linear-gradient(0deg, #e3e3e3, #010d4679, #e1e1e1);
 }

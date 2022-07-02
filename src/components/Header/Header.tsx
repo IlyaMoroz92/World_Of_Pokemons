@@ -11,13 +11,13 @@ type HeaderProps = {
 
 export const Header = (props: HeaderProps) => {
 
-    const {toggleTheme} = useTheme()
+    const {theme, toggleTheme} = useTheme()
     
     return (
         <div className='header__main'>
             <div className="header__theme">
                 <Button
-                    icon={<Dark />}
+                    icon={ theme === 'light' ? <Dark /> :  <Light /> }
                     className={'with-icon header-theme'}
                     onClick={toggleTheme}
                 />

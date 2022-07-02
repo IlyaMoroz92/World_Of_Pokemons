@@ -19,7 +19,7 @@ function App() {
   const {theme} = useTheme()
 
   return (
-    <div className='App' >
+    <div className='App'>
       <div className="header">
         <Header/>
         </div>
