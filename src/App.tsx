@@ -11,15 +11,19 @@ import { ReactComponent as Pokeball } from './assets/img/pokeball.svg'
 import { ReactComponent as Up} from './assets/img/Up.svg'
 import {  Outlet } from 'react-router-dom';
 import { Tabs } from './components/Tabs';
+import { useTheme } from './features/theme/useTheme'
+import { ReactComponent as Light} from '../src/assets/img/Light.svg'
 
 function App() {
   
+  const {theme} = useTheme()
+
   return (
-    <div className="App">
+    <div className='App' >
       <div className="header">
         <Header/>
         </div>
-      <div className="content">
+      <div className={`content theme--${theme}`}>
         <div className='all__wrapper'>
           <Tabs/>
           <Outlet/>

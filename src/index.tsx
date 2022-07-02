@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AllPokemons } from "./pages/AllPokemons/allPokemons";
 import { FavoritesPokemons } from "./pages/FavoritesPokemons/favoritesPokemons";
+import {Provider} from 'react-redux'
+import {store} from './redux/store'
 
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement
@@ -14,7 +16,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    {/* <Provider store={store}> */}
+    <Provider store={store}>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
@@ -32,7 +34,7 @@ root.render(
           />
       </Routes>
     </BrowserRouter>
-    {/* </Provider> */}
+    </Provider>
   </React.StrictMode>
 );
 

@@ -16,25 +16,21 @@ export const AllPokemons = () => {
 
     const pokeFun = async() => {
         setLoading(true);
+        setPokeData([])
         const res = await axios.get(url);
         setNextUrl(res.data.next)
         setPrevUrl(res.data.previous)
-        console.log(nextUrl);
-        console.log(prevUrl);
-        
         getPokemon(res.data.results)
         setLoading(false)
     } 
 
     const getPokemon = async(res: any) =>{
-        
         res.map(async(item: any) => {
             const result = await axios.get(item.url)
-            
             setPokeData(state => {
                 state=[...state, result.data]
                 state.sort((a,b) => a.id - b.id)
-                return state;  
+                return state;
             })
         })
     }
@@ -42,7 +38,7 @@ export const AllPokemons = () => {
     useEffect(() => {
         pokeFun();
     }, [url])
-    
+
     return (
         <>
         <div className='all'>
