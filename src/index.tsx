@@ -5,7 +5,8 @@ import  App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AllPokemons } from "./pages/AllPokemons/allPokemons";
-import { FavoritesPokemons } from "./pages/FavoritesPokemons/favoritesPokemons";
+import { FavoritesPage } from "./pages/FavoritesPage/favoritesPage";
+import { OnePokemon } from "./pages/OnePokemon/onePokemon";
 import {Provider} from 'react-redux'
 import {store} from './redux/store'
 
@@ -19,10 +20,12 @@ root.render(
     <Provider store={store}>
     <BrowserRouter>
       <Routes>
+      
         <Route path="/" element={<App />}>
+        <Route path="/pokemon/:id" element={<OnePokemon />} /> 
           <Route path="/" element={<AllPokemons />}/>
-        {/* <Route path="/post/:id" element={<PostPage />} /> */}
-          <Route path="/favorites" element={<FavoritesPokemons />} />
+          <Route path="/favorites" element={<FavoritesPage />} />
+          
         </Route>
         <Route
             path="*"

@@ -3,11 +3,16 @@ import axios, { Axios } from "axios";
 import { useEffect, useState } from 'react';
 import { Card } from '../../components/Card';
 import { Button } from '../../components/Button';
+import { usePokemons } from '../../features/getPokemons'
 
+export const AllPokemons: any = () => {
 
-export const AllPokemons = () => {
+    const {pokemonsInfo} = usePokemons()
 
-    const [pokeData, setPokeData] = useState<{data: any, id: number }[]>([])
+    console.log(pokemonsInfo);
+    
+    
+/*     const [pokeData, setPokeData] = useState<{data: any, id: number }[]>([])
     const [loading, setLoading] = useState(true)
     const [url, setUrl] = useState('https://pokeapi.co/api/v2/pokemon/')
     const [nextUrl, setNextUrl] = useState()
@@ -16,15 +21,14 @@ export const AllPokemons = () => {
 
     const pokeFun = async() => {
         setLoading(true);
-        setPokeData([])
         const res = await axios.get(url);
         setNextUrl(res.data.next)
         setPrevUrl(res.data.previous)
         getPokemon(res.data.results)
         setLoading(false)
-    } 
+    } */
 
-    const getPokemon = async(res: any) =>{
+   /*  const getPokemon = async(res: any) =>{
         res.map(async(item: any) => {
             const result = await axios.get(item.url)
             setPokeData(state => {
@@ -37,24 +41,44 @@ export const AllPokemons = () => {
 
     useEffect(() => {
         pokeFun();
-    }, [url])
+    }, [url]) */
 
     return (
         <>
         <div className='all'>
             {
-                loading ? <h3>Loading ...</h3> :
-                pokeData?.map((item: any, ind: number) => {
+                /* loading ? <h3>Loading ...</h3> : */
+                pokemonsInfo?.map((item: any, ind: number) => {
                     return(
                         <Card
-                            pokemon={item}
-                            key={ind}
+
+                            name={item.name}
+                            sprites={item.sprites.other.dream_world.front_default}
+                            key={item.id}
                         />
                     )
                 })
-            }
+            } 
+{/*             {
+                loading ? <h3>Loading ...</h3> :
+                pokemons?.map((item: any, ind: number) => {
+                    return(
+                        <div key={ind}>
+                            {item.name}
+                            
+                            
+                            <Card
+                            id = {item.id}
+                            name = {item.name}
+                            sprites= {item.sprites}
+                            key={ind}
+                        /> 
+                        </div>
+                    )
+                })
+            } */}
         </div>
-        <div className="buttons__pagination">
+{/*         <div className="buttons__pagination">
                 {prevUrl && <Button 
                     onClick={() => {
                         setPokeData([])
@@ -71,7 +95,7 @@ export const AllPokemons = () => {
                     className='text'
                     text={'Next'}
                 />} 
-            </div>
+            </div> */}
         </>
     );
 }

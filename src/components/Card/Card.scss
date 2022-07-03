@@ -5,7 +5,6 @@
     &:hover {
         transform: scale(-1, 1);
     }
-
 }
 
 .card {
@@ -15,4 +14,19 @@
     margin: 10px;
     border-radius: 10px;
     background: linear-gradient(0deg, #e3e3e3, #010d4679, #e1e1e1);
+
+    &__title {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #010d46a7;
+
+        &:hover {
+            color: #010d46;
+        }
+        &:visited {
+            color: #010d46a7;
+        }
+    }
+
 }
+

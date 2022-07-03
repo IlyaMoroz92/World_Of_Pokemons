@@ -1,9 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit"
 import themeReducer from '../features/theme/themeSlice'
 import createSagaMiddleware from "@redux-saga/core"
-/* import postsReducer from '../features/getPosts/postsSlice'
-import {fetchPostsSaga} from '../sagas/getPostsSaga' 
-import {fetchPostSaga} from '../sagas/getPostSaga'
+import {fetchPokemonSaga} from '../sagas/getPokemonSaga'
+import pokemonsReducer from '../features/getPokemons/pokemonsSlice'
+import {fetchPokemonsSaga} from '../sagas/getPokemonsSaga'
+import pokemonOneReducer from '../features/getOnePokemon/pokemonOneSlice'
+import {getPokemonsInfoSaga} from '../sagas/getPokemonsInfoSaga'
+/* 
+ 
+
 import { authReducer } from '../features/auth'; 
 import { singUpSaga } from '../sagas/signUpSaga';
 import { verifyReducer } from '../features/verify';
@@ -18,7 +23,9 @@ const SagaMiddleware = createSagaMiddleware()
 export const store = configureStore ({
     reducer: {
         theme: themeReducer,
-        /* posts: postsReducer,
+        pokemons: pokemonsReducer,
+        onePokemon: pokemonOneReducer
+        /* ,
         auth: authReducer,
         verify: verifyReducer,
         login: loginReducer,
@@ -29,12 +36,15 @@ export const store = configureStore ({
     }
 })
 
-/* SagaMiddleware.run(fetchPostsSaga)
-SagaMiddleware.run(fetchPostSaga)
+/* 
+
 SagaMiddleware.run(singUpSaga)
 SagaMiddleware.run(verifySaga)
 SagaMiddleware.run(signInSaga)
 SagaMiddleware.run(UserInfoSaga) */
+SagaMiddleware.run(fetchPokemonSaga)
+SagaMiddleware.run(fetchPokemonsSaga)
+SagaMiddleware.run(getPokemonsInfoSaga)
 
 export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch

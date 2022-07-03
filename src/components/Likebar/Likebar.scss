@@ -17,6 +17,12 @@
     }
 }
 
+
+.button__active * {
+    fill: red
+}
+
+
 /* .button--likebar {
     padding: 0;
     border: none;
