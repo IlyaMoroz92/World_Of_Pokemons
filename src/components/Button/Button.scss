@@ -26,13 +26,15 @@
             fill: #003149;
         }
 
-        &-active {
-            svg path{
-                fill: red;
-            }
-        }
+        
     }
 
+    &-active {
+        svg path{
+            fill: red;
+        }
+    }
+    
     &--with-icon:hover {
         svg path{
             fill: red;

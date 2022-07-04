@@ -9,7 +9,7 @@ export const AllPokemons: any = () => {
 
     const {pokemonsInfo} = usePokemons()
 
-    console.log(pokemonsInfo);
+   /*  console.log(pokemonsInfo); */
     
     
 /*     const [pokeData, setPokeData] = useState<{data: any, id: number }[]>([])
@@ -51,7 +51,7 @@ export const AllPokemons: any = () => {
                 pokemonsInfo?.map((item: any, ind: number) => {
                     return(
                         <Card
-
+                            id={item.id}
                             name={item.name}
                             sprites={item.sprites.other.dream_world.front_default}
                             key={item.id}

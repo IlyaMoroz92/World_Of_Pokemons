@@ -11,18 +11,22 @@ type CardProps = {
 }
 
 export const Card = (props:CardProps)  => {
-    
     return (
         <div className="card">
-                <h2>{props.id}</h2>
-            <Picture
-                className='card'
-                src={props.sprites}
-                alt={props.name}
-            />
-            <Title
-                text={props.name}
-            />
+            <h2 >{props.id}</h2>
+            <Link className='card__title'  to={`/pokemon/${props.id}`}>
+                <Picture
+                    className='card'
+                    src={props.sprites}
+                    alt={props.name}
+                />
+            </Link>
+            <Link className='card__title'  to={`/pokemon/${props.id}`}>
+                <Title
+                    text={props.name}
+                    className="card__title"
+                />
+            </Link>
             <Likebar pokemonId={props.id}/>
         </div>
     )

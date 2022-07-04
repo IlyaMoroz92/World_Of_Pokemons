@@ -18,8 +18,10 @@
 }
 
 
-.button__active * {
-    fill: red
+.button--active {
+    svg path{
+        fill: red;
+    }
 }
 
 

@@ -39,7 +39,7 @@ export function* fetchPokemonsInfo(action: PayloadAction<Pokemons>) {
             Promise.all(requests)
             .then((responses) => Promise.all(responses.map(r => r.json())))
         )
-        console.log(data);
+        /* console.log(data); */
         yield put(fetchPokemonsInfoSuccess(data))
         
     } catch (error: any) {

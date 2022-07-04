@@ -15,7 +15,6 @@ export const Likebar = ({pokemonId}: LikebarProps) => {
     const {onLikePokemon, onPokeballPokemon, getInfoPokemon} = usePokemons()
 
     const id = Number(pokemonId);
-    console.log(id);
     const pokemonInfo = getInfoPokemon(id)
 
     
@@ -23,15 +22,15 @@ export const Likebar = ({pokemonId}: LikebarProps) => {
         <div className= 'likebar'>
             <div className="likebar__left ">
                 <Button
-                    icon={pokemonInfo?.like ? <Like className='button__active' /> : <Like/>}
-                    className={'with-icon'}
+                    icon={ <Like/>}
+                    className={pokemonInfo?.like ? 'with-icon button--active' : 'with-icon'}
                     onClick={() => onLikePokemon(id)}
                 />
             </div>
             <div className="likebar__right">
                 <Button
-                    icon={pokemonInfo?.pokeball ? <Pokeball className='button__active' /> : <Pokeball/>}
-                    className={'with-icon'}
+                    icon={ <Pokeball/>}
+                    className={pokemonInfo?.pokeball ? 'with-icon button--active' : 'with-icon'}
                     onClick={() => onPokeballPokemon(id)}
                 />
             </div>

@@ -11,11 +11,11 @@ type FetchPokemons = {
 export function* fetchPokemons() {
 
     try {
-        const response: Response = yield fetch(`https://pokeapi.co/api/v2/pokemon/?offset=20&limit=20`)
+        const response: Response = yield fetch(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20`)
 
         const pokemons: FetchPokemons = yield(response.json())
         
-        console.log(pokemons);
+        /* console.log(pokemons); */
         
         yield put(fetchPokemonsSuccess(pokemons.results))
 
