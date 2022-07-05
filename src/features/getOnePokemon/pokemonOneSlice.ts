@@ -10,6 +10,7 @@ export interface IPokemon  {
     weight?: number
     height?: number
     types?: any
+    species?: any
 }
 
 interface IPokemonsState {

@@ -1,0 +1,29 @@
+.favorites {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr  1fr 1fr;
+    justify-items: center;
+}
+
+@media screen and (max-width: 1250px) {
+    .favorites{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 1030px) {
+    .favorites{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .favorites{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .favorites{
+        grid-template-columns: 1fr;
+    }
+}

@@ -7,7 +7,10 @@ export function* fetchPokemon(action: PayloadAction<number>) {
     try {
         const response: Response = yield fetch(`https://pokeapi.co/api/v2/pokemon/${action.payload}`)
         const pokemon: IPokemon = yield(response.json())
-        /* console.log(pokemon); */
+        
+        /* const res: Response = yield fetch(pokemon.species.url)
+        const species: IPokemon = yield(response.json())
+        console.log(species); */
         
         yield put(fetchPokemonSuccess(pokemon))
 

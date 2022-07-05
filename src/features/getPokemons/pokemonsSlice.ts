@@ -39,9 +39,7 @@ export const pokemonsSlice = createSlice({
             state.error = action.payload
         },
         fetchPokemonsInfoSuccess:(state, action:PayloadAction<Array<IPokemon>>) => {
-            console.log(action.payload);
             if(state.isLoading === 'pending'){
-
                 state.isLoading = 'idle'
                 state.pokemonsInfo = action.payload
             }

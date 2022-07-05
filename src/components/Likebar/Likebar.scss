@@ -1,8 +1,8 @@
 .likebar {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding: 0 40px;
+    justify-content: space-around;
+    
     
     &:hover {
         color: black;

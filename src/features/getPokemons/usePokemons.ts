@@ -6,7 +6,6 @@ export const usePokemons = () => {
     const pokemons = useAppSelector( state => state.pokemons.content)
     /* console.log(pokemons); */
     
-    
     const pokemonsInfo = useAppSelector( state => state.pokemons.pokemonsInfo)
 
     const dispatch = useAppDispatch()
@@ -16,7 +15,6 @@ export const usePokemons = () => {
             dispatch(fetchPokemons())
         }
     }, [])
-    
 
     const onLikePokemon = (id: number) => {
         

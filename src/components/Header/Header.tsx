@@ -1,9 +1,15 @@
 import { Button } from '../Button'
+import { Pokeball } from '../Pokeball'
+import PokeballClose from './img/Pokeball.png'
+import PokeballOpen from './img/PokeballOpen.png'
+import { ReactComponent as Logo } from '../../assets/img/Logo.svg'
 import { ReactComponent as Dark } from '../../assets/img/Dark.svg'
 import { ReactComponent as Light} from '../../assets/img/Light.svg'
 import './Header.scss'
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { useTheme } from '../../features/theme/useTheme'
+import {  usePokeball } from '../../features/pokeball/usePokeball'
+import { Link } from 'react-router-dom'
 
 type HeaderProps = {
     className?: string
@@ -12,6 +18,7 @@ type HeaderProps = {
 export const Header = (props: HeaderProps) => {
 
     const {theme, toggleTheme} = useTheme()
+    const {pokeball, togglePokeball} = usePokeball()
     
     return (
         <div className='header__main'>
@@ -22,6 +29,19 @@ export const Header = (props: HeaderProps) => {
                     onClick={toggleTheme}
                 />
             </div>
+            <div className='header__logo'>
+                <Link to='/'>
+                <p><Logo /></p>
+                </Link>
+            </div>
+            <div className="header__pokeball">
+            <Button
+                    src={pokeball==='active' ? PokeballOpen : PokeballClose}
+                    className={'pokeball'}
+                    onClick={togglePokeball}
+                />
+            </div>
+            
         </div>
     )
 }

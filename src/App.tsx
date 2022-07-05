@@ -7,16 +7,20 @@ import { Picture } from './components/Picture'
 import { Title } from './components/Title'
 import { Likebar } from './components/Likebar'
 import { Card } from './components/Card'
-import { ReactComponent as Pokeball } from './assets/img/pokeball.svg'
-import { ReactComponent as Up} from './assets/img/Up.svg'
+import { Pokeball } from './components/Pokeball'
+
 import {  Outlet } from 'react-router-dom';
 import { Tabs } from './components/Tabs';
 import { useTheme } from './features/theme/useTheme'
 import { ReactComponent as Light} from '../src/assets/img/Light.svg'
+import {  usePokeball } from './features/pokeball/usePokeball'
+import { useEffect } from 'react';
 
 function App() {
-  
   const {theme} = useTheme()
+  const {pokeball, togglePokeball} = usePokeball()
+
+
 
   return (
     <div className='App'>
@@ -25,6 +29,7 @@ function App() {
         </div>
       <div className={`content theme--${theme}`}>
         <div className='all__wrapper'>
+          <Pokeball className={`${pokeball}`}/>
           <Tabs/>
           <Outlet/>
         </div>

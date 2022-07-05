@@ -2,7 +2,7 @@
     &__main {
     background-color: #003149;
     display: flex;
-    justify-content: space-between;
+    justify-content:space-around;
     line-height: 84px;
     height: 84px;
     }
@@ -14,4 +14,60 @@
         fill: #87d4fb;
     }
     
+}
+
+.button--pokeball {
+    height: 100%;
+
+
+    width: 130px;
+    & * {
+    position: fixed;
+    top: 8px;
+    right: 10px;
+    height: 70px;
+    padding: 0 10px;
+    }
+}
+
+.logo * {
+    cursor: pointer;
+    color: red;
+    svg path{
+        fill: #87d4fb;
+    }
+}
+
+.header__logo {
+    & svg {
+        width: 200px;
+    }
+    position: absolute;
+    top: -60px;
+    svg path{
+        fill: #87d4fb;
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .header__logo {
+
+        & svg {
+            width: 150px;
+
+        }
+        top: -40px;
+        svg path{
+            fill: #87d4fb;
+            width: 150px;
+            height: 150px;
+        }
+    }
+
+    .button--pokeball * {
+        height: 50px;
+        top: 18px;
+    }
 }

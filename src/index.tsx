@@ -4,9 +4,11 @@ import './index.scss';
 import  App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AllPokemons } from "./pages/AllPokemons/allPokemons";
+import { AllPokemons } from "./pages/AllPokemonsPage/allPokemonsPage";
 import { FavoritesPage } from "./pages/FavoritesPage/favoritesPage";
-import { OnePokemon } from "./pages/OnePokemon/onePokemon";
+import { OnePokemon } from "./pages/OnePokemonPage/onePokemonPage";
+import { SignInPage } from "./pages/SignInPage/signinPage";
+import { SignUpPage } from "./pages/SignUpPage/signupPage";
 import {Provider} from 'react-redux'
 import {store} from './redux/store'
 
@@ -25,8 +27,10 @@ root.render(
         <Route path="/pokemon/:id" element={<OnePokemon />} /> 
           <Route path="/" element={<AllPokemons />}/>
           <Route path="/favorites" element={<FavoritesPage />} />
-          
+          <Route path="signin" element={<SignInPage />} />
+          <Route path="signup" element={<SignUpPage />} />
         </Route>
+        
         <Route
             path="*"
             element={

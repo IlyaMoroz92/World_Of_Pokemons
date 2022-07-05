@@ -23,6 +23,54 @@
   margin: 0 auto;
 }
 
+
+@media screen and (max-width: 1250px) {
+  .all__wrapper {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1030px) {
+  .all__wrapper {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .all__wrapper {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .content {
+    padding: 0 60px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .all__wrapper {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .content {
+    padding: 0 60px  0px 0px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .all__wrapper {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .content {
+    padding: 0 60px  0px 0px;
+  }
+}
+
 .theme--light {
   background-color: #DADADA;
 }

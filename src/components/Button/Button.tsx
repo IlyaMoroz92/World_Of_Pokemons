@@ -5,6 +5,7 @@ type ButtonProps = {
     text?: string
     disabled?: boolean
     className?: string
+    src?: any
     icon?: ReactElement
     onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
     type?: string
@@ -18,6 +19,7 @@ export const Button =  (props: ButtonProps) => {
         disabled={props.disabled}
         onClick={props.onClick}
         >
+        {props.src && <img className={props.className} src={props.src} alt="icon" />}
         {props.icon}
         {props.text && <span className="button__text">{props.text}</span>}
         </button>

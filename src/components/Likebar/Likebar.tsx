@@ -7,19 +7,20 @@ import { usePokemons } from '../../features/getPokemons';
 
 type LikebarProps = {
     pokemonId?: number | undefined
+    className?: string
 }
 
-export const Likebar = ({pokemonId}: LikebarProps) => {
+export const Likebar = (props: LikebarProps) => {
     
     
     const {onLikePokemon, onPokeballPokemon, getInfoPokemon} = usePokemons()
 
-    const id = Number(pokemonId);
+    const id = Number(props.pokemonId);
     const pokemonInfo = getInfoPokemon(id)
 
     
     return (
-        <div className= 'likebar'>
+        <div className= {`likebar likebar--${props.className}`}>
             <div className="likebar__left ">
                 <Button
                     icon={ <Like/>}

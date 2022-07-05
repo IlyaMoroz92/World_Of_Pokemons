@@ -8,7 +8,7 @@
 }
 
 .card {
-    border: 1px solid black;
+    border: 1px solid #c3c3c3;
     height: 260px;
     width: 180px;
     margin: 10px;
@@ -28,5 +28,16 @@
         }
     }
 
+    &--dark {
+        border: 1px solid #003149d9;
+    }
+
+}
+
+.card--pokeball{
+    border: none;
+    background: none;
+    height: 78px;
+    width: 78px;
 }
 

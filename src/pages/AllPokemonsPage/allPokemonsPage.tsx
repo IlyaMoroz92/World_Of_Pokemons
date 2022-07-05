@@ -1,4 +1,4 @@
-import './allPokemons.scss'
+import './allPokemonsPage.scss'
 import axios, { Axios } from "axios";
 import { useEffect, useState } from 'react';
 import { Card } from '../../components/Card';
@@ -51,6 +51,9 @@ export const AllPokemons: any = () => {
                 pokemonsInfo?.map((item: any, ind: number) => {
                     return(
                         <Card
+                            titleId={true}
+                            likebar={true}
+                            nameId={true}
                             id={item.id}
                             name={item.name}
                             sprites={item.sprites.other.dream_world.front_default}

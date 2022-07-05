@@ -1,4 +1,4 @@
-import './onePokemon.scss'
+import './onePokemonPage.scss'
 import axios, { Axios } from "axios";
 import { useEffect, useState } from 'react';
 import { Card } from '../../components/Card';
@@ -17,7 +17,7 @@ export const OnePokemon: any = () => {
     }, [id])
 
     return (
-        <div className='' key={pokemon?.id}>
+        <div className='pokemon__page' key={pokemon?.id}>
             <img src={`${pokemon?.sprites.other.dream_world.front_default}`} alt={pokemon?.name} />
             <h2>{pokemon?.name}</h2>
             <h2>{pokemon?.id}</h2>

@@ -1,7 +1,7 @@
 .tabs__main {
     display: flex;
     justify-content: space-between;
-    max-width: 600px;
+    max-width: 300px;
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
@@ -11,15 +11,15 @@
     }
 }
 
-.titlenav--tabs {
-    height: 70px;
-    width: 100%;
+.tabs__link {
+    font-size: 20px;
+    color: #003149;
 }
 
-.titlenav__link--tabs {
-    padding: 0 30px 25px 30px;
+.tabs__link--dark {
+    color: #b9bac6;
 }
 
 .active {
-    border-bottom: 3px solid red;
+    border-bottom: 3px solid #003149;
 }
