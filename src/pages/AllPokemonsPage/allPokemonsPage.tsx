@@ -48,7 +48,7 @@ export const AllPokemons: any = () => {
         <div className='all'>
             {
                 /* loading ? <h3>Loading ...</h3> : */
-                pokemonsInfo?.map((item: any, ind: number) => {
+                pokemonsInfo?.map((item: any) => {
                     return(
                         <Card
                             titleId={true}

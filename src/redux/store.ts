@@ -11,17 +11,11 @@ import { loginReducer } from '../features/login'
 import { signInSaga } from '../sagas/signInSaga'
 import { singUpSaga } from '../sagas/signUpSaga'
 import { authReducer } from '../features/auth'
-/* 
- 
+import { UserInfoSaga } from '../sagas/userInfoSaga'
+import { userInfoReducer } from '../features/userInfo'
+import { verifyReducer } from '../features/verify'
+import { verifySaga } from '../sagas/verifySaga'
 
-; 
-;
-import { verifyReducer } from '../features/verify';
-import { verifySaga } from '../sagas/verifySagas' ;
-;
-;
-import { UserInfoSaga } from '../sagas/userInfoSagas';
-import { userInfoReducer } from '../features/userInfo'; */
 
 const SagaMiddleware = createSagaMiddleware()
 
@@ -33,23 +27,17 @@ export const store = configureStore ({
         onePokemon: pokemonOneReducer,
         login: loginReducer,
         auth: authReducer,
-        /* ,
-        
+        userInfo: userInfoReducer,
         verify: verifyReducer,
-        ,
-        userInfo: userInfoReducer, */
+
     },
     middleware: getDefaultMiddleware => {
         return getDefaultMiddleware().concat(SagaMiddleware)
     }
 })
 
-/* 
-
-
 SagaMiddleware.run(verifySaga)
-
-SagaMiddleware.run(UserInfoSaga) */
+SagaMiddleware.run(UserInfoSaga)
 SagaMiddleware.run(singUpSaga)
 SagaMiddleware.run(signInSaga)
 SagaMiddleware.run(fetchPokemonSaga)

@@ -9,6 +9,7 @@ import { FavoritesPage } from "./pages/FavoritesPage/favoritesPage";
 import { OnePokemon } from "./pages/OnePokemonPage/onePokemonPage";
 import { SignInPage } from "./pages/SignInPage/signinPage";
 import { SignUpPage } from "./pages/SignUpPage/signupPage";
+import { VerifyPage } from "./pages/VerifyPage/verifyPage";
 import {Provider} from 'react-redux'
 import {store} from './redux/store'
 
@@ -29,6 +30,7 @@ root.render(
           <Route path="/favorites" element={<FavoritesPage />} />
           <Route path="signin" element={<SignInPage />} />
           <Route path="signup" element={<SignUpPage />} />
+          <Route path="verify" element={<VerifyPage />} />
         </Route>
         
         <Route

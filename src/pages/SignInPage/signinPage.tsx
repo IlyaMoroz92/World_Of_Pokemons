@@ -55,7 +55,7 @@ export const SignInPage = () => {
         inputPassword.current?.addEventListener('focus', focusPassword);
         
         return () => {
-            inputEmail.current?.removeEventListener('focus', focusEmail);    
+            inputEmail.current?.removeEventListener('focus', focusEmail);
             inputPassword.current?.removeEventListener('focus', focusPassword);
         }
     })  
@@ -73,9 +73,9 @@ export const SignInPage = () => {
                     title='Email'
                     className='password'
                     type='email'
-                    placeholder='Введите email'
+                    placeholder='Enter your email'
                     onChange={changeInputEmail}
-                    value='mermermer@inbox.ru'
+                    /* value='mermermer@inbox.ru' */
                     errorMessage={errorEmail}
                     ref={inputEmail}
                 />
@@ -83,9 +83,9 @@ export const SignInPage = () => {
                     title='Password'
                     className='password'
                     type='password'
-                    placeholder='Введите пароль'
+                    placeholder='Enter your password'
                     onChange={changeInputPassword}
-                    value='16673688A'
+                    /* value='16673688A' */
                     errorMessage={errorPassword}
                     ref={inputPassword}
                 />

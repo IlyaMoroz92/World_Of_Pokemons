@@ -8,19 +8,15 @@
     }
 }
 
-.header-theme {
-    z-index: 10;
+.header-theme, .header__user {
     svg path{
         fill: #87d4fb;
     }
-    
 }
 
 .button--pokeball {
     height: 100%;
-
-
-    width: 130px;
+    width: 70px;
     & * {
     position: fixed;
     top: 8px;
@@ -38,12 +34,19 @@
     }
 }
 
+.header__user {
+    & svg {
+        height: 60px;
+        vertical-align: middle;
+    }
+}
+
+
 .header__logo {
+    
     & svg {
         width: 200px;
     }
-    position: absolute;
-    top: -60px;
     svg path{
         fill: #87d4fb;
         width: 150px;
@@ -70,4 +73,8 @@
         height: 50px;
         top: 18px;
     }
+}
+
+.pokeball {
+    margin-left: 10px;
 }

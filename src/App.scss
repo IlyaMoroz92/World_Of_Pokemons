@@ -45,7 +45,7 @@
   }
 
   .content {
-    padding: 0 60px;
+    padding: 0 60px  0px 2px;
   }
 }
 
@@ -68,6 +68,7 @@
 
   .content {
     padding: 0 60px  0px 0px;
+    z-index: 200;
   }
 }
 
@@ -77,4 +78,21 @@
 
 .theme--dark {
   background-color: #003149d9;
+}
+
+.sign__form {
+  width: 600px;
+  margin: 0 auto;
+  color: #003149d9;
+  font-size: 18px;
+  font-weight: bold;
+  border: 2px solid #003149d9;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 50px;
+} 
+
+.title {
+  font-size: 26px;
+  color: #003149d9;
 }

@@ -11,6 +11,7 @@
 }
 
 .input, .input--email, .input--password{
+    background-color: inherit;
     width: 99%;
     margin: 0 auto;
     height: 56px;.input {
@@ -31,7 +32,7 @@
         height: 56px;
         font-size: 16px;
         border-radius: 2px;
-    
+        
         &__div {
             font-weight: 600;
         }

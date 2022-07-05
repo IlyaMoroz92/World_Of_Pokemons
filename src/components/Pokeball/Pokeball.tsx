@@ -30,7 +30,6 @@ export const Pokeball = (props: PokeballProps) => {
                     sprites={el.sprites.other.dream_world.front_default}
                     key={el.id}
                     name={el.name}
-                    
                 />
             )
         })}

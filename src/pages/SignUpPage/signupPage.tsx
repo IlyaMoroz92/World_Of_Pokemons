@@ -110,7 +110,7 @@ export const SignUpPage = () => {
                     title='Email'
                     className='password'
                     type='email'
-                    placeholder='Введите email'
+                    placeholder='Enter your email'
                     onChange={changeInputEmail}
                     disabled={false}
                     value={valueEmail}
@@ -121,7 +121,7 @@ export const SignUpPage = () => {
                     title='Password'
                     className='password'
                     type='password'
-                    placeholder='Введите пароль'
+                    placeholder='Enter your password'
                     onChange={changeInputPassword}
                     disabled={false}
                     value={valuePassword}

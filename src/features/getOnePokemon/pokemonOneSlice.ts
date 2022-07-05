@@ -1,9 +1,9 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 
 export interface IPokemon  {
-    id: number,
+    id: number | undefined
     image: string,
-    name: string,
+    name: string | undefined,
     like?: boolean,
     pokeball?: boolean,
     sprites?: any
@@ -11,6 +11,8 @@ export interface IPokemon  {
     height?: number
     types?: any
     species?: any
+    stats?: any
+    base_experience?: number
 }
 
 interface IPokemonsState {
