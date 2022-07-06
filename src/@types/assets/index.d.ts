@@ -7,7 +7,7 @@ declare module '*.svg' {
 
 declare module '*.png' {
     import React = require('react')
-    export const ReactComponent: React.SFC<React.SVGProps<SVGSVGElement>>
+    export const ReactComponent: React.SFC<React.PNGProps<PNGPNGElement>>
     const src: string
     export default src
 }

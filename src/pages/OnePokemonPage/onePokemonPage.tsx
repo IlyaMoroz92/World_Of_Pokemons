@@ -8,6 +8,7 @@ import { Card } from '../../components/Card';
 import { Picture } from '../../components/Picture';
 import { Likebar } from '../../components/Likebar';
 import { Title } from '../../components/Title';
+import { Navigator } from '../../components/Navigator';
 import { IPokemon } from '../../features/getOnePokemon/pokemonOneSlice'
 
 export const OnePokemon = () => {
@@ -18,12 +19,13 @@ export const OnePokemon = () => {
     const { id } = useParams();
     const idPokemon = Number(id)
 
+    
     useEffect(() => {
         getPokemon(idPokemon)
     }, [id])
 
-    console.log(pokemon)
     return (
+        <div className="pokemon_page-container">
         <div className='pokemon__page' key={pokemon?.id}>
             <div className="pokemon__page-left">
                 <Picture src={`${pokemon?.sprites.other.dream_world.front_default}`} alt={pokemon?.name} />
@@ -48,11 +50,13 @@ export const OnePokemon = () => {
                     <h3>Type:</h3>
                     {pokemon?.types.map((el: any, ind: number) => {
                         return(
-                            <h4 key={ind} >{el.type.name}</h4>
+                            <h4 className={el.type.name} key={ind} >{el.type.name}</h4>
                         )
                     })}
                 </div>
             </div>
+            </div>
+            <Navigator id={pokemon?.id} />
         </div>
 
     )

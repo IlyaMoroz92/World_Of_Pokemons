@@ -8,17 +8,20 @@ import { Title } from './components/Title'
 import { Likebar } from './components/Likebar'
 import { Card } from './components/Card'
 import { Pokeball } from './components/Pokeball'
-
 import {  Outlet } from 'react-router-dom';
 import { Tabs } from './components/Tabs';
+import { Burger } from './components/Burger';
 import { useTheme } from './features/theme/useTheme'
 import { ReactComponent as Light} from '../src/assets/img/Light.svg'
 import {  usePokeball } from './features/pokeball/usePokeball'
+import {  useBurger } from './features/burger/useBurger'
 import { useEffect } from 'react';
 
 function App() {
   const {theme} = useTheme()
   const {pokeball, togglePokeball} = usePokeball()
+  const {burger, toggleBurger} = useBurger()
+
 
 
 
@@ -29,7 +32,8 @@ function App() {
         </div>
       <div className={`content theme--${theme}`}>
         <div className='all__wrapper'>
-          <Pokeball className={`${pokeball}`}/>
+          <Pokeball className={pokeball}/>
+          <Burger className={burger}/>
           <Tabs/>
           <Outlet/>
         </div>

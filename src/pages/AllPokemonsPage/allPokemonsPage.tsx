@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Card } from '../../components/Card';
 import { Button } from '../../components/Button';
 import { usePokemons } from '../../features/getPokemons'
+import { Toolsbar } from '../../components/ToolsBar';
 
 export const AllPokemons: any = () => {
 
@@ -45,6 +46,7 @@ export const AllPokemons: any = () => {
 
     return (
         <>
+        <Toolsbar/>
         <div className='all'>
             {
                 /* loading ? <h3>Loading ...</h3> : */

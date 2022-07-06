@@ -14,7 +14,7 @@ export const User = (props: UserProps) => {
     const { userInfo } = useUserInfo();
     
     return (
-        <div className='user'>
+        <div className={`user user--${props.className}`}>
             <span className='user__abbr'>{userInfo?.username[0]} </span>
             <span className='user__name'>{userInfo?.username}</span>
         </div>

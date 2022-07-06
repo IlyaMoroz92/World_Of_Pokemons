@@ -1,0 +1,31 @@
+@import '../../styles/variables';
+
+.toolsbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    
+    &:hover {
+        color: black;
+    }
+
+    &__select {
+        background-color: inherit;
+        border-radius: 10px;
+        color: $color-main;
+        font-size: 16px;
+        height: 40px;
+        width: 200px;
+        border: 2px solid $color-main;
+    }
+}
+
+.input--toolsbar {
+    border-radius: 10px;
+    color: $color-main;
+    font-size: 16px;
+    height: 40px;
+    width: 200px;
+    border: 2px solid $color-main;
+}

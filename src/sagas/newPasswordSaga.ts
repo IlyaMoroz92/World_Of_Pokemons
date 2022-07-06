@@ -1,0 +1,18 @@
+import { PayloadAction } from "@reduxjs/toolkit";
+import { takeEvery, put, call } from "redux-saga/effects";
+import { type actionNewPassword } from "../features/newPassword/newPasswordSlice";
+
+export function* newPassword(action: PayloadAction<actionNewPassword>) {
+    const response: Response = yield fetch("https://studapi.teachmeskills.by/auth/users/reset_password_confirm/", {
+            method: 'POST',
+            body: JSON.stringify(action.payload),
+            headers: {
+                'accept': 'application/json',
+                "Content-Type": "application/json"
+            }
+        })
+}
+
+export function* newPasswordSaga() {
+    yield(takeEvery('newPassword/newPassword', newPassword))
+}

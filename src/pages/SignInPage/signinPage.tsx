@@ -18,11 +18,11 @@ export const SignInPage = () => {
     const inputEmail = React.useRef<HTMLInputElement>(null);
     const inputPassword = React.useRef<HTMLInputElement>(null);
     
-    const changeInputEmail = (event: any): void => setValueEmail('mermermer@inbox.ru')
-    const changeInputPassword = (event: any): void => setValuePassword('16673688A')
+    const changeInputEmail = (event: any): void => setValueEmail(event.target.value)
+    const changeInputPassword = (event: any): void => setValuePassword(event.target.value)
 
     const login = useAppSelector(state => state.login);
-
+    
     const { signInUser } = useLogin();
 
     const navigate = useNavigate();

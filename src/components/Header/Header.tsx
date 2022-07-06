@@ -7,12 +7,16 @@ import { ReactComponent as Logo } from '../../assets/img/logov1.svg'
 import { ReactComponent as Login } from '../../assets/img/login.svg'
 import { ReactComponent as Dark } from '../../assets/img/Dark.svg'
 import { ReactComponent as Light} from '../../assets/img/Light.svg'
+import { ReactComponent as BurgerOpen} from '../../assets/img/burgeropen.svg'
+import { ReactComponent as BurgerClose} from '../../assets/img/burgerclose.svg'
 import './Header.scss'
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { useTheme } from '../../features/theme/useTheme'
 import { useUserInfo } from '../../features/userInfo/useUserInfo'
 import {  usePokeball } from '../../features/pokeball/usePokeball'
+import {  useBurger } from '../../features/burger/useBurger'
 import { Link } from 'react-router-dom'
+
 
 type HeaderProps = {
     className?: string
@@ -21,13 +25,20 @@ type HeaderProps = {
 export const Header = (props: HeaderProps) => {
 
     const {userInfo} = useUserInfo()
-    console.log(userInfo);
-    
     const {theme, toggleTheme} = useTheme()
     const {pokeball, togglePokeball} = usePokeball()
+    const {burger, toggleBurger} = useBurger()
     
+
     return (
         <div className='header__main'>
+            <div className="header__burger">
+                <Button
+                    icon={burger ==='active' ? <BurgerClose /> : <BurgerOpen/>}
+                    className='burger'
+                    onClick={toggleBurger}
+                />
+            </div>
             <div className="header__theme">
                 <Button
                     icon={ theme === 'light' ? <Dark /> :  <Light /> }
@@ -41,7 +52,7 @@ export const Header = (props: HeaderProps) => {
                 </Link>
             </div>
             <div className='header__user'>
-                {userInfo ? <User/> : 
+                {userInfo ? <User/> :
                 <Link to='/signin'><Login/></Link>}
             </div>
             <div className="header__pokeball">

@@ -10,6 +10,8 @@ import { OnePokemon } from "./pages/OnePokemonPage/onePokemonPage";
 import { SignInPage } from "./pages/SignInPage/signinPage";
 import { SignUpPage } from "./pages/SignUpPage/signupPage";
 import { VerifyPage } from "./pages/VerifyPage/verifyPage";
+import { NewPasswordPage } from "./pages/NewPasswordPage/newPasswordPage";
+import { ResetPasswordPage } from "./pages/ResetPasswordPage/resetPasswordPage";
 import {Provider} from 'react-redux'
 import {store} from './redux/store'
 
@@ -31,6 +33,8 @@ root.render(
           <Route path="signin" element={<SignInPage />} />
           <Route path="signup" element={<SignUpPage />} />
           <Route path="verify" element={<VerifyPage />} />
+          <Route path="newpassword" element={<NewPasswordPage />} />
+          <Route path="resetpassword" element={<ResetPasswordPage />} />
         </Route>
         
         <Route

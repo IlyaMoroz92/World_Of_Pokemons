@@ -5,7 +5,7 @@
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
-
+    margin: 10px 20px;
     * {
         text-decoration: none;
     }
@@ -22,4 +22,10 @@
 
 .active {
     border-bottom: 3px solid #003149;
+}
+
+@media screen and (max-width: 640px) {
+    .tabs__main {
+        max-width: 250px;
+    }
 }
