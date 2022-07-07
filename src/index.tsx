@@ -14,6 +14,8 @@ import { NewPasswordPage } from "./pages/NewPasswordPage/newPasswordPage";
 import { ResetPasswordPage } from "./pages/ResetPasswordPage/resetPasswordPage";
 import {Provider} from 'react-redux'
 import {store} from './redux/store'
+import { PrivateRoute } from './components/PrivateRoute/PrivateRoute'
+
 
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement
@@ -29,7 +31,7 @@ root.render(
         <Route path="/" element={<App />}>
         <Route path="/pokemon/:id" element={<OnePokemon />} /> 
           <Route path="/" element={<AllPokemons />}/>
-          <Route path="/favorites" element={<FavoritesPage />} />
+          <Route path="/favorites" element={<PrivateRoute><FavoritesPage/></PrivateRoute>} />
           <Route path="signin" element={<SignInPage />} />
           <Route path="signup" element={<SignUpPage />} />
           <Route path="verify" element={<VerifyPage />} />

@@ -4,9 +4,8 @@ import { fetchPokemons, likePokemon, pokeballPokemon } from "./pokemonsSlice";
 
 export const usePokemons = () => {
     const pokemons = useAppSelector( state => state.pokemons.content)
-    /* console.log(pokemons); */
     
-    const pokemonsInfo = useAppSelector( state => state.pokemons.pokemonsInfo)
+    const pokemonsInfo = useAppSelector(state => state.pokemons.pokemonsInfo)
 
     const dispatch = useAppDispatch()
     

@@ -15,12 +15,12 @@ export const Toolsbar = (props: ToolsbarProps) => {
                 <Input
                     className='toolsbar'
                     type='search'
-                    placeholder='Search...'
+                    placeholder='🔍 Search...'
                 />
             </div>
             <div className="sort">
-            <select className='toolsbar__select'>
-                <option selected value="id">Id</option>
+            <select className='toolsbar__select'> Sort
+                <option value="id">Id</option>
                 <option value="weight">Weight</option>
                 <option value="height">Height</option>
                 <option value="base_experience">Experience</option>

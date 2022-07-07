@@ -10,7 +10,7 @@
         color: black;
     }
 
-    &__select {
+    &__select, &__select option{
         background-color: inherit;
         border-radius: 10px;
         color: $color-main;
