@@ -76,12 +76,6 @@ export const Burger = (props: BurgerProps) => {
                         {!userInfo ?
                             <div>
                                 <Link to='/signin'><Login className='burger__login'/></Link>
-                                <Link to='/resetpassword'>
-                                    <Button
-                                        text='Reset password'
-                                        className='text'
-                                    />
-                                 </Link>
                             </div>
                             :
                             <div className="user__info">
@@ -90,7 +84,13 @@ export const Burger = (props: BurgerProps) => {
                                 text='Log Out'
                                 className='text'
                                 /* onClick={handleSubmit} */
-                            />
+                                />
+                                <Link to='/resetpassword'>
+                                    <Button
+                                        text='Reset password'
+                                        className='text'
+                                    />
+                                </Link>
                             </div>
                         }
                     </div>
