@@ -15,14 +15,21 @@ export const OnePokemon = () => {
 
     const {pokemonsInfo} = usePokemons()
 
-    const {getPokemon, pokemon} = useOnePokemon()
+    const {getPokemon, pokemon, species, getSpecies} = useOnePokemon()
     const { id } = useParams();
     const idPokemon = Number(id)
-
+    console.log(pokemon);
+    
     
     useEffect(() => {
         getPokemon(idPokemon)
     }, [id])
+
+    useEffect(() => {
+        if(pokemon) {
+        getSpecies(pokemon.species.url)
+        }
+    }, [pokemon])
 
     return (
         <div className="pokemon_page-container">
@@ -44,7 +51,7 @@ export const OnePokemon = () => {
                         return(
                             <h4 key={ind} >{el.stat.name} : {el.base_stat} </h4>
                         )
-                    })} 
+                    })}
                 </div>
                 <div className='card__pokemon card__types'>
                     <h3>Type:</h3>
@@ -58,7 +65,6 @@ export const OnePokemon = () => {
             </div>
             <Navigator id={pokemon?.id} />
         </div>
-
     )
 }
 

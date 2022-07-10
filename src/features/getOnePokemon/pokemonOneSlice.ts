@@ -19,12 +19,14 @@ interface IPokemonsState {
     pokemon: IPokemon | null,
     isLoading: 'idle' | 'pending',
     error: string | null,
+    species: {} | null
 }
 
 const initialState: IPokemonsState = {
     isLoading: 'idle',
     error: null,
     pokemon: null,
+    species: null
 }
 
 export const pokemonOneSlice = createSlice({
@@ -49,12 +51,23 @@ export const pokemonOneSlice = createSlice({
             state.error = action.payload
             
         },
+        fetchPokemonSpecies: (state, action: PayloadAction<string>) => {
+            
+        },
+        fetchPokemonSpeciesSuccess:(state, action:PayloadAction<object>) => {
+            state.species = action.payload
+            console.log(action.payload);
+            
+        },
+
     },
 })
 
 export const { 
     fetchPokemon, 
     fetchPokemonSuccess, 
-    fetchPokemonFailure} = pokemonOneSlice.actions
+    fetchPokemonFailure,
+    fetchPokemonSpecies,
+    fetchPokemonSpeciesSuccess} = pokemonOneSlice.actions
 
 export default pokemonOneSlice.reducer

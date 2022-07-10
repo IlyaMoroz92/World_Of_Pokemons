@@ -5,13 +5,31 @@ import { Card } from '../../components/Card';
 import { Button } from '../../components/Button';
 import { usePokemons } from '../../features/getPokemons'
 import { Toolsbar } from '../../components/ToolsBar';
+import { fetchPokemons } from '../../sagas/getPokemonsSaga';
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { IPokemon } from '../../features/getOnePokemon/pokemonOneSlice';
 
 export const AllPokemons: any = () => {
 
-    const {pokemonsInfo} = usePokemons()
+    const {pokemonsInfo, fetchNextPokemons} = usePokemons()
+    const [page, setPage] = useState(20)
 
-   /*  console.log(pokemonsInfo); */
+    /* console.log(pokemonsInfo); */
     
+    const getNextPokemons = (page:number): void => {
+        fetchNextPokemons(page)
+    }
+
+
+
+
+    const dispatch = useAppDispatch()
+
+    useEffect(() => {
+        getNextPokemons(page)
+    }, [page])
+
+
     
 /*     const [pokeData, setPokeData] = useState<{data: any, id: number }[]>([])
     const [loading, setLoading] = useState(true)
@@ -49,8 +67,7 @@ export const AllPokemons: any = () => {
         <Toolsbar/>
         <div className='all'>
             {
-                /* loading ? <h3>Loading ...</h3> : */
-                pokemonsInfo?.map((item: any) => {
+                pokemonsInfo?.map((item: IPokemon) => {
                     return(
                         <Card
                             titleId={true}
@@ -83,6 +100,26 @@ export const AllPokemons: any = () => {
                 })
             } */}
         </div>
+        <div className="buttons__pagination">
+                {/* prevUrl && */ <Button 
+                    onClick={() => {
+                        
+                    }}
+                    className='text'
+                    text={'Previous'}
+                />}
+                { /* nextUrl && */<Button 
+                    onClick={() => {
+                        setPage(page + 20)
+                        /* console.log(page); */
+                    }}
+                    className='text'
+                    text={'Next'}
+                />} 
+            </div>
+
+
+            
 {/*         <div className="buttons__pagination">
                 {prevUrl && <Button 
                     onClick={() => {

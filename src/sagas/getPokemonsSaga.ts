@@ -8,10 +8,11 @@ type FetchPokemons = {
     results: Pokemons
 }
 
-export function* fetchPokemons() {
+export function* fetchPokemons(offset: any) {
 
     try {
-        const response: Response = yield fetch(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20`)
+        
+        const response: Response = yield fetch(`https://pokeapi.co/api/v2/pokemon/?offset=${offset.payload}&limit=20`)
 
         const pokemons: FetchPokemons = yield(response.json())
         

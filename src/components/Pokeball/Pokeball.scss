@@ -12,7 +12,9 @@
     
     &--active {
         transform: translateX(0);
-        
+        height: 90%;
+        height: 550px;
+        overflow-y: scroll;
     }
 
 

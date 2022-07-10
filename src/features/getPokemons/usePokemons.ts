@@ -11,12 +11,15 @@ export const usePokemons = () => {
     
     useEffect(() => {
         if(!pokemons) {
-            dispatch(fetchPokemons())
+            dispatch(fetchPokemons(0))
         }
-    }, [])
+    }, [dispatch])
+
+    const fetchNextPokemons = (page: number) => {
+        dispatch(fetchPokemons(page))
+    }
 
     const onLikePokemon = (id: number) => {
-        
         dispatch(likePokemon(id))
     }
 
@@ -33,6 +36,7 @@ export const usePokemons = () => {
         onLikePokemon,
         onPokeballPokemon,
         getInfoPokemon,
+        fetchNextPokemons,
     }
 }
 

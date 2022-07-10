@@ -24,7 +24,7 @@ export const pokemonsSlice = createSlice({
     name: 'pokemons',
     initialState,
     reducers: {
-        fetchPokemons: (state) => {
+        fetchPokemons: (state, action:PayloadAction<number>) => {
             if(state.isLoading === 'idle'){
                 state.isLoading = 'pending'
             }

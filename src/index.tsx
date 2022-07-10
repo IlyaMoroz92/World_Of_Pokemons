@@ -27,7 +27,6 @@ root.render(
     <Provider store={store}>
     <BrowserRouter>
       <Routes>
-      
         <Route path="/" element={<App />}>
         <Route path="/pokemon/:id" element={<OnePokemon />} /> 
           <Route path="/" element={<AllPokemons />}/>

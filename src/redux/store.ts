@@ -19,6 +19,7 @@ import { verifySaga } from '../sagas/verifySaga'
 import { newPasswordSaga } from '../sagas/newPasswordSaga'
 import { newPasswordReducer } from '../features/newPassword'
 import { resetPasswordSaga } from '../sagas/resetPasswordSaga'
+import { getPokemonSpeciesSaga } from '../sagas/getPokemonSpeciesSaga'
 import { resetPasswordReducer } from '../features/resetPassword'
 
 const SagaMiddleware = createSagaMiddleware()
@@ -53,6 +54,7 @@ SagaMiddleware.run(fetchPokemonsSaga)
 SagaMiddleware.run(getPokemonsInfoSaga)
 SagaMiddleware.run(newPasswordSaga)
 SagaMiddleware.run(resetPasswordSaga)
+SagaMiddleware.run(getPokemonSpeciesSaga)
 
 
 export type RootState = ReturnType<typeof store.getState>
