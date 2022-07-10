@@ -24,6 +24,10 @@ export const userInfoSlice = createSlice({
             state.errorUser = null
             state.user = action.payload
         },
+        setNoUserInfo: (state, action: PayloadAction<UserInfo>) => {
+            state.errorUser = null
+            state.user = null
+        },
         userInfoFailure: (state, action: PayloadAction<any>) => {
             state.user = null
             state.errorUser = action.payload
@@ -31,6 +35,6 @@ export const userInfoSlice = createSlice({
     }
 })
 
-export const { getUserInfo,  userInfoFailure } = userInfoSlice.actions
+export const { getUserInfo,  userInfoFailure, setNoUserInfo } = userInfoSlice.actions
 
 export default userInfoSlice.reducer

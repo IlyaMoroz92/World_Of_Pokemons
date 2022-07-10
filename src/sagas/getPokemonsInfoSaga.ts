@@ -34,7 +34,6 @@ export function* fetchPokemonsInfo(action: PayloadAction<Pokemons>) {
                 fetch(pokemon.url)
             )
         }))
-
         const data: IPokemon[] = yield(
             Promise.all(requests)
             .then((responses) => Promise.all(responses.map(r => r.json())))
