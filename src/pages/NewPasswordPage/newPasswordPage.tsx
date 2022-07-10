@@ -2,11 +2,9 @@ import { Title } from "../../components/Title";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import {NavLink} from 'react-router-dom'
-import { useLogin } from "../../features/login";
 import { useNavigate } from "react-router-dom";
 import { useNewPassword } from "../../features/newPassword/useNewPassword";
-import { useAppSelector } from "../../redux/hooks";
-import React, { useState, useRef, useEffect } from "react";
+import  { useState, useRef, useEffect } from "react";
 
 
 export const NewPasswordPage = () => {
@@ -18,9 +16,9 @@ export const NewPasswordPage = () => {
     const [valuePassword, setValuePassword] = useState('');
     const [errorPassword, setErrorPassword] = useState('');
 
-    const inputUid = React.useRef<HTMLInputElement>(null);
-    const inputToken = React.useRef<HTMLInputElement>(null);
-    const inputPassword = React.useRef<HTMLInputElement>(null);
+    const inputUid = useRef<HTMLInputElement>(null);
+    const inputToken = useRef<HTMLInputElement>(null);
+    const inputPassword = useRef<HTMLInputElement>(null);
 
     
     const changeInputUid = (event: any): void => setValueUid(event.target.value)

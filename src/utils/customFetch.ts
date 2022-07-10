@@ -1,5 +1,4 @@
 import jwtDecode, { JwtPayload } from 'jwt-decode'
-import { Header } from '../components/Header'
 
 interface IError {
     detail: string
@@ -28,7 +27,6 @@ const refreshToken = async (refresh: string) => {
 
     return JSON.stringify(data.access) as string
 }
-
 
 export const customFetch = async (url: string, config: any = {}) => {
 

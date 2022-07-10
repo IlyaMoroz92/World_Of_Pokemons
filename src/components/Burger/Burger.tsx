@@ -1,4 +1,3 @@
-
 import './Burger.scss'
 import { User } from "../User";
 import { Button } from "../Button";

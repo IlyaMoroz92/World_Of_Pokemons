@@ -7,11 +7,6 @@ import { useAppSelector } from "../../redux/hooks";
 import { useAuth } from '../../features/auth/useAuth'
 import React, { useState, useEffect } from "react";
 
-
-
-
-
-
 export const SignUpPage = () => {
 
     const [valueName, setValueName] = useState('');
@@ -75,7 +70,7 @@ export const SignUpPage = () => {
 
         {valueConfirmPassword != valuePassword
         ?
-        setErrorConfirmPassword("Passwords don't match")
+        setErrorConfirmPassword("You need to enter the same password")
         :
         setErrorConfirmPassword('')}
 
@@ -84,7 +79,7 @@ export const SignUpPage = () => {
             inputEmail.current?.removeEventListener('focus', focusEmail);
             inputPassword.current?.removeEventListener('focus', focusPassword);
         }
-    })
+    }, [valueConfirmPassword, valuePassword])
 
     useEffect(() => {
         inputName.current?.focus()

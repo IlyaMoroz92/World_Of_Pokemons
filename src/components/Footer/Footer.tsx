@@ -1,5 +1,3 @@
-import React, { ReactElement } from "react";
-
 import './Footer.scss'
 
 

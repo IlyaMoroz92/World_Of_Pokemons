@@ -1,11 +1,9 @@
-import { PayloadAction } from "@reduxjs/toolkit";
-import { put, call, takeEvery} from 'redux-saga/effects';
+import { put, takeEvery} from 'redux-saga/effects';
 import {
     getUserInfo,
     userInfoFailure,
     type UserInfo,
 } from '../features/userInfo/userInfoSlice';
-import { type loginToken } from "../features/login/loginSlice";
 import { customFetch } from "../utils/customFetch";
 
 export function* UserInformation() {

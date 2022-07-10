@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './Input.scss'
 import React, { ForwardedRef } from 'react';
 

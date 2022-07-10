@@ -5,7 +5,7 @@ import {NavLink} from 'react-router-dom'
 import { useLogin } from "../../features/login";
 import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../redux/hooks";
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 
 
 export const SignInPage = () => {
@@ -15,8 +15,8 @@ export const SignInPage = () => {
     const [valuePassword, setValuePassword] = useState('');
     const [errorPassword, setErrorPassword] = useState('');
 
-    const inputEmail = React.useRef<HTMLInputElement>(null);
-    const inputPassword = React.useRef<HTMLInputElement>(null);
+    const inputEmail = useRef<HTMLInputElement>(null);
+    const inputPassword = useRef<HTMLInputElement>(null);
     
     const changeInputEmail = (event: any): void => setValueEmail(event.target.value)
     const changeInputPassword = (event: any): void => setValuePassword(event.target.value)
@@ -75,7 +75,6 @@ export const SignInPage = () => {
                     type='email'
                     placeholder='Enter your email'
                     onChange={changeInputEmail}
-                    /* value='mermermer@inbox.ru' */
                     errorMessage={errorEmail}
                     ref={inputEmail}
                 />
@@ -85,7 +84,6 @@ export const SignInPage = () => {
                     type='password'
                     placeholder='Enter your password'
                     onChange={changeInputPassword}
-                    /* value='16673688A' */
                     errorMessage={errorPassword}
                     ref={inputPassword}
                 />
@@ -93,7 +91,7 @@ export const SignInPage = () => {
                     className='text'
                     type='button'
                     onClick={handleSubmit}
-                    text='Sign In '
+                    text='Sign In'
                 />
                 <p className="sign__question">Don't have an account ? <NavLink to='/signup'>Sign Up</NavLink></p>
             </div>

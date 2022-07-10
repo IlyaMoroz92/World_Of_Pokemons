@@ -1,10 +1,5 @@
-import React from 'react'
 import './Pokeball.scss'
-import { Button } from "../Button";
 import { Card } from "../Card";
-import { ReactComponent as Closed} from './img/Closed.svg' 
-import { useAppDispatch, useAppSelector } from '../../redux/hooks';
-import { Link } from 'react-router-dom';
 import { usePokemons } from '../../features/getPokemons'
 import {  IPokemon } from '../../features/getOnePokemon/pokemonOneSlice'
 
@@ -15,8 +10,6 @@ type PokeballProps = {
 export const Pokeball = (props: PokeballProps) => {
 
     const { pokemonsInfo } = usePokemons()
-
-
 
     return (
         <div className={`pokeball__menu pokeball__menu--${props.className}`}>

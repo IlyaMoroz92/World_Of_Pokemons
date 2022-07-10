@@ -1,25 +1,19 @@
 import './onePokemonPage.scss'
-import axios, { Axios } from "axios";
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useOnePokemon } from '../../features/getOnePokemon'
 import { useParams } from "react-router-dom"
 import { usePokemons } from '../../features/getPokemons'
-import { Card } from '../../components/Card';
 import { Picture } from '../../components/Picture';
 import { Likebar } from '../../components/Likebar';
-import { Title } from '../../components/Title';
 import { Navigator } from '../../components/Navigator';
-import { IPokemon } from '../../features/getOnePokemon/pokemonOneSlice'
+
 
 export const OnePokemon = () => {
-
-    const {pokemonsInfo} = usePokemons()
-
+    
     const {getPokemon, pokemon, species, getSpecies} = useOnePokemon()
     const { id } = useParams();
     const idPokemon = Number(id)
-    console.log(pokemon);
-    
+    console.log(species);
     
     useEffect(() => {
         getPokemon(idPokemon)
@@ -47,6 +41,7 @@ export const OnePokemon = () => {
                 </div>
                 <div className='card__pokemon card__stats'>
                     <h3>Stats:</h3>
+                    <h4>Happines: {species?.base_happiness}</h4>
                     {pokemon?.stats.map((el: any, ind: number) => {
                         return(
                             <h4 key={ind} >{el.stat.name} : {el.base_stat} </h4>
@@ -67,29 +62,3 @@ export const OnePokemon = () => {
         </div>
     )
 }
-
-
-        {/* <div className='pokemon__page' key={pokemon?.id}>
-            <img src={`${pokemon?.sprites.other.dream_world.front_default}`} alt={pokemon?.name} />
-            <h2>{pokemon?.name}</h2> 
-            <h3>Weight: <span>{pokemon?.weight}</span> </h3>
-            <h3>Height: <span>{pokemon?.height}</span></h3>
-            <h3>Experience: {pokemon?.base_experience}</h3>
-            <div className='card__types'>
-                <h3>Stats:</h3>
-               {pokemon?.stats.map((el: any, ind: number) => {
-                    return(
-                        <h3 key={ind} >{el.stat.name} : {el.base_stat} </h3>
-                    )
-                })} 
-            </div>
-            <div className='card__types'>
-                <h3>Type:</h3>
-                {pokemon?.types.map((el: any, ind: number) => {
-                    return(
-                        <h3 key={ind} >{el.type.name}</h3>
-                    )
-                })}
-            </div>
-            
-        </div> */}

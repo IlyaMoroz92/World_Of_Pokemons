@@ -1,4 +1,3 @@
-import './Picture.scss'
 
 type PictureProps = {
     className?: string

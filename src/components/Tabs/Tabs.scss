@@ -1,3 +1,5 @@
+@import "../../styles/_variables";
+
 .tabs__main {
     display: flex;
     justify-content: space-between;
@@ -13,7 +15,7 @@
 
 .tabs__link {
     font-size: 20px;
-    color: #003149;
+    color: $color-header;
 }
 
 .tabs__link--dark {
@@ -21,7 +23,7 @@
 }
 
 .active {
-    border-bottom: 3px solid #003149;
+    border-bottom: 3px solid $color-header;
 }
 
 @media screen and (max-width: 640px) {

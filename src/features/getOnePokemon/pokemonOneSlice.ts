@@ -15,11 +15,15 @@ export interface IPokemon  {
     base_experience?: number
 }
 
+export interface ISpecies  {
+    base_happiness?: number
+}
+
 interface IPokemonsState {
     pokemon: IPokemon | null,
     isLoading: 'idle' | 'pending',
     error: string | null,
-    species: {} | null
+    species: ISpecies | null
 }
 
 const initialState: IPokemonsState = {
@@ -34,7 +38,6 @@ export const pokemonOneSlice = createSlice({
     initialState,
     reducers: {
         fetchPokemon: (state, action:PayloadAction<number>) => {
-
             if(state.isLoading === 'idle'){
                 state.isLoading = 'pending'
             }

@@ -1,5 +1,3 @@
-import './Title.scss'
-
 
 type TitleProps = {
     className?: string

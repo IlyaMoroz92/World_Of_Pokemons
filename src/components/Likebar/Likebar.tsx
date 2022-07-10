@@ -2,7 +2,6 @@ import { Button } from '../Button'
 import './Likebar.scss'
 import { ReactComponent as Pokeball } from '../../assets/img/pokeball.svg'
 import { ReactComponent as Like} from '../../assets/img/Like.svg'
-import { ReactComponent as Like2} from '../../assets/img/Up1.svg'
 import { usePokemons } from '../../features/getPokemons';
 
 type LikebarProps = {

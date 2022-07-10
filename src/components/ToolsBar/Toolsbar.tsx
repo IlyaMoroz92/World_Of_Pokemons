@@ -1,7 +1,5 @@
-import { Button } from '../Button'
 import { Input } from '../Input'
 import './Toolsbar.scss'
-
 
 type ToolsbarProps = {
     className?: string

@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import { type UserInfo, getUserInfo, setNoUserInfo } from "./userInfoSlice";
+import { type UserInfo, setNoUserInfo } from "./userInfoSlice";
 
 export const useUserInfo = () => {
 

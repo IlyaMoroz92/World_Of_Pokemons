@@ -1,12 +1,12 @@
+@import '../../styles/variables';
+
 .user {
     color: #87d4fb;
     font-weight: 600;
     font-size: 20px;
 
-
-
     &__abbr {
-        border: 1px solid #87d4fb;
+        border: 1px solid $color-main2;
         border-radius: 5px;
         padding: 0 5px;
         margin: 0 5px;

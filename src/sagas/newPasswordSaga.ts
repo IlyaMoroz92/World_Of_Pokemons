@@ -1,5 +1,5 @@
 import { PayloadAction } from "@reduxjs/toolkit";
-import { takeEvery, put, call } from "redux-saga/effects";
+import { takeEvery } from "redux-saga/effects";
 import { type actionNewPassword } from "../features/newPassword/newPasswordSlice";
 
 export function* newPassword(action: PayloadAction<actionNewPassword>) {

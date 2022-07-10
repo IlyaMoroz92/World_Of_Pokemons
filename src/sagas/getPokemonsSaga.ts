@@ -1,4 +1,4 @@
-import { put, call, takeEvery } from 'redux-saga/effects'
+import { put, takeEvery } from 'redux-saga/effects'
 import { fetchPokemonsFailure, fetchPokemonsSuccess, type Pokemons } from '../features/getPokemons/pokemonsSlice'
 
 type FetchPokemons = {
@@ -15,8 +15,6 @@ export function* fetchPokemons(offset: any) {
         const response: Response = yield fetch(`https://pokeapi.co/api/v2/pokemon/?offset=${offset.payload}&limit=20`)
 
         const pokemons: FetchPokemons = yield(response.json())
-        
-        /* console.log(pokemons); */
         
         yield put(fetchPokemonsSuccess(pokemons.results))
 

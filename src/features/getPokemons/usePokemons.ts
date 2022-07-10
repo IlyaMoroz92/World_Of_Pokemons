@@ -9,11 +9,11 @@ export const usePokemons = () => {
 
     const dispatch = useAppDispatch()
     
-    useEffect(() => {
+    /* useEffect(() => {
         if(!pokemons) {
             dispatch(fetchPokemons(0))
         }
-    }, [dispatch])
+    }, [dispatch]) */
 
     const fetchNextPokemons = (page: number) => {
         dispatch(fetchPokemons(page))

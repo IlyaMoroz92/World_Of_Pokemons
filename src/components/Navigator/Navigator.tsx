@@ -1,4 +1,3 @@
-import React, { ReactElement } from "react";
 import './Navigator.scss'
 import {NavLink} from 'react-router-dom'
 import { ReactComponent as Left} from '../../assets/img/left.svg'

@@ -1,21 +1,23 @@
+@import "../../styles/_variables";
+
 .button {
     cursor: pointer;
     border: none;
     background-color: inherit;
 
     &--text {
-        color: #003149;;
+        color: $color-header;
         font-size: 20px;
         border-radius: 2px;
         padding: 10px 20px;
         font-weight: 600;
         line-height: 24px;
-        border: 1px solid #003149;
+        border: 1px solid $color-header;
         border-radius: 5px;
         margin: 5px;
 
         &:hover {
-            background-color: #003149;
+            background-color: $color-header;
             color: #e6e6e6;
         }
     }
@@ -23,7 +25,7 @@
     &--with-icon {
         
         svg path{
-            fill: #003149;
+            fill: $color-header;
         }
 
         

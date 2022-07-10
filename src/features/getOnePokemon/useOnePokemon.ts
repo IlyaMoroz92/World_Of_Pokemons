@@ -1,6 +1,6 @@
-import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { fetchPokemon, fetchPokemonSpecies } from "./pokemonOneSlice";
+
 
 export const useOnePokemon = () => {
     

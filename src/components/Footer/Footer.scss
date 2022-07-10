@@ -1,9 +1,11 @@
+@import "../../styles/_variables";
+
 .footer {
 
     width: 100%;
     line-height: 80px;
     height: 80px;
-    background-color: #003149;
+    background-color: $color-header;
 
     &__wrapper {
         margin: 0 auto;

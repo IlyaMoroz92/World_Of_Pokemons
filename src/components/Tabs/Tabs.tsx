@@ -1,6 +1,5 @@
 import './Tabs.scss'
-/* import { TitleNav } from "../../components/TitleNav"; */
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useTheme } from '../../features/theme/useTheme'
 
 type TabsProps = {
