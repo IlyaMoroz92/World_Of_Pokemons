@@ -31,12 +31,12 @@ root.render(
         <Route path="/" element={<App />}>
         <Route path="/pokemon/:id" element={<OnePokemon />} /> 
           <Route path="/" element={<AllPokemons />}/>
-          <Route path="/favorites" element={<PrivateRoute><FavoritesPage/></PrivateRoute>} />
+          <Route path="/favorites" element={<FavoritesPage/>} />
           <Route path="signin" element={<SignInPage />} />
           <Route path="signup" element={<SignUpPage />} />
           <Route path="verify" element={<VerifyPage />} />
           <Route path="newpassword" element={<NewPasswordPage />} />
-          <Route path="resetpassword" element={<ResetPasswordPage />} />
+          <Route path="resetpassword" element={<PrivateRoute><ResetPasswordPage/></PrivateRoute>}/>
         </Route>
         
         <Route
