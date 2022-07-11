@@ -17,7 +17,7 @@ export const AllPokemons: any = () => {
 
     useEffect(() => {
         getNextPokemons(page)
-    }, [page])
+    }, [page, getNextPokemons])
 
     const showNextPokemons = () => {
         setPage(page + 20)
