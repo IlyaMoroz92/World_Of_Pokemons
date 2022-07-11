@@ -2,31 +2,29 @@ import './onePokemonPage.scss'
 import { useEffect } from 'react';
 import { useOnePokemon } from '../../features/getOnePokemon'
 import { useParams } from "react-router-dom"
-import { usePokemons } from '../../features/getPokemons'
 import { Picture } from '../../components/Picture';
 import { Likebar } from '../../components/Likebar';
 import { Navigator } from '../../components/Navigator';
 
 
 export const OnePokemon = () => {
-    
+
     const {getPokemon, pokemon, species, getSpecies} = useOnePokemon()
     const { id } = useParams();
     const idPokemon = Number(id)
-    console.log(species);
     
     useEffect(() => {
         getPokemon(idPokemon)
-    }, [id])
+    }, [idPokemon])
 
     useEffect(() => {
         if(pokemon) {
         getSpecies(pokemon.species.url)
         }
-    }, [pokemon])
+    }, [pokemon?.species.url])
 
     return (
-        <div className="pokemon_page-container">
+        <div className="pokemon__page-container">
         <div className='pokemon__page' key={pokemon?.id}>
             <div className="pokemon__page-left">
                 <Picture src={`${pokemon?.sprites.other.dream_world.front_default}`} alt={pokemon?.name} />

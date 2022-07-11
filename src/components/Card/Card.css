@@ -1,0 +1,50 @@
+.picture--card {
+  height: 150px;
+  width: 150px;
+  cursor: pointer;
+}
+
+.picture--card:hover {
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.card {
+  border: 1px solid #c3c3c3;
+  height: 260px;
+  width: 180px;
+  margin: 10px;
+  border-radius: 10px;
+  background: -webkit-gradient(linear, left bottom, left top, from(#e3e3e3), color-stop(#010d4679), to(#e1e1e1));
+  background: linear-gradient(0deg, #e3e3e3, #010d4679, #e1e1e1);
+}
+
+.card h2 {
+  color: #003149d9;
+}
+
+.card__title {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #010d46a7;
+}
+
+.card__title:hover {
+  color: #010d46;
+}
+
+.card__title:visited {
+  color: #010d46a7;
+}
+
+.card--dark {
+  border: 1px solid #003149d9;
+}
+
+.card--pokeball {
+  border: none;
+  background: none;
+  height: 78px;
+  width: 78px;
+}
+/*# sourceMappingURL=Card.css.map */

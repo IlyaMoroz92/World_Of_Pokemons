@@ -1,0 +1,25 @@
+.footer {
+  width: 100%;
+  line-height: 80px;
+  height: 80px;
+  background-color: #003149;
+}
+
+.footer__wrapper {
+  margin: 0 auto;
+  color: #8D8E97;
+  font-size: 16px;
+  font-weight: 400;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+/*# sourceMappingURL=Footer.css.map */

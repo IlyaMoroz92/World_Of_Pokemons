@@ -1,6 +1,5 @@
 
 import './App.scss';
-import { Button } from './components/Button'
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
 import { Pokeball } from './components/Pokeball'

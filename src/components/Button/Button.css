@@ -1,0 +1,41 @@
+.button {
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
+}
+
+.button--text {
+  color: #003149;
+  font-size: 20px;
+  border-radius: 2px;
+  padding: 10px 20px;
+  font-weight: 600;
+  line-height: 24px;
+  border: 1px solid #003149;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.button--text:hover {
+  background-color: #003149;
+  color: #e6e6e6;
+}
+
+.button--with-icon svg path {
+  fill: #003149;
+}
+
+.button-active svg path {
+  fill: red;
+}
+
+.button--with-icon:hover svg path {
+  fill: red;
+}
+
+.button svg {
+  vertical-align: middle;
+  width: 25px;
+  height: 25px;
+}
+/*# sourceMappingURL=Button.css.map */

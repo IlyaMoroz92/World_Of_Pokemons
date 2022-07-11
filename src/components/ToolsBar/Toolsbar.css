@@ -1,0 +1,36 @@
+.toolsbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.toolsbar:hover {
+  color: black;
+}
+
+.toolsbar__select, .toolsbar__select option {
+  background-color: inherit;
+  border-radius: 10px;
+  color: #003149d9;
+  font-size: 16px;
+  height: 40px;
+  width: 200px;
+  border: 2px solid #003149d9;
+}
+
+.input--toolsbar {
+  border-radius: 10px;
+  color: #003149d9;
+  font-size: 16px;
+  height: 40px;
+  width: 200px;
+  border: 2px solid #003149d9;
+}
+/*# sourceMappingURL=Toolsbar.css.map */

@@ -55,8 +55,6 @@ export const pokemonsSlice = createSlice({
             }
         },
         pokeballPokemon: (state, action: PayloadAction<number>) => {
-            console.log(action.payload);
-            
             if(state.pokemonsInfo) {
                 state.pokemonsInfo = state.pokemonsInfo.map(pokemon => pokemon.id === action.payload ? {...pokemon, pokeball: !pokemon.pokeball} : pokemon)
             }

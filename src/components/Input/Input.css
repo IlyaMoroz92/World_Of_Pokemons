@@ -1,0 +1,65 @@
+.input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.input__div {
+  font-weight: 600;
+}
+
+.input__error {
+  color: red;
+  margin: 0;
+}
+
+.input, .input--email, .input--password {
+  background-color: inherit;
+  width: 99%;
+  margin: 0 auto;
+  height: 56px;
+  font-size: 16px;
+  border-radius: 2px;
+}
+
+.input .input, .input--email .input, .input--password .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.input .input__div, .input--email .input__div, .input--password .input__div {
+  font-weight: 600;
+}
+
+.input .input__error, .input--email .input__error, .input--password .input__error {
+  color: red;
+  margin: 0;
+}
+
+.input .input, .input .input--email, .input .input--password, .input--email .input, .input--email .input--email, .input--email .input--password, .input--password .input, .input--password .input--email, .input--password .input--password {
+  width: 99%;
+  margin: 0 auto;
+  height: 56px;
+  font-size: 16px;
+  border-radius: 2px;
+}
+
+.input .input__div, .input .input--email__div, .input .input--password__div, .input--email .input__div, .input--email .input--email__div, .input--email .input--password__div, .input--password .input__div, .input--password .input--email__div, .input--password .input--password__div {
+  font-weight: 600;
+}
+
+.input .input__error, .input .input--email__error, .input .input--password__error, .input--email .input__error, .input--email .input--email__error, .input--email .input--password__error, .input--password .input__error, .input--password .input--email__error, .input--password .input--password__error {
+  color: red;
+  margin: 0;
+}
+
+.input__div, .input--email__div, .input--password__div {
+  font-weight: 600;
+}
+
+.input__error, .input--email__error, .input--password__error {
+  color: red;
+  margin: 0;
+}
+/*# sourceMappingURL=Input.css.map */

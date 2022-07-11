@@ -1,0 +1,139 @@
+.pokemon__page {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: #003149d9;
+}
+
+.pokemon__page img {
+  height: 350px;
+  width: 350px;
+}
+
+.pokemon__page *::first-letter {
+  text-transform: uppercase;
+}
+
+.pokemon__page-right {
+  margin-right: 40px;
+}
+
+.card__pokemon {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #8D8E97;
+  margin: 5px;
+  color: #003149d9;
+}
+
+@media screen and (max-width: 690px) {
+  .pokemon__page {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.grass {
+  background-color: #33b101;
+  border-radius: 5px;
+}
+
+.poison {
+  background-color: #9a0ec1;
+  border-radius: 5px;
+}
+
+.fire {
+  background-color: #ce7226;
+  border-radius: 5px;
+}
+
+.water {
+  background-color: #184fbe;
+  border-radius: 5px;
+}
+
+.bug {
+  background-color: #337600;
+  border-radius: 5px;
+}
+
+.flying {
+  background-color: #7fbdff;
+  border-radius: 5px;
+}
+
+.normal {
+  background-color: #b7b7b7;
+  border-radius: 5px;
+}
+
+.electric {
+  background-color: rgba(218, 239, 63, 0.863);
+  border-radius: 5px;
+}
+
+.ground {
+  background-color: rgba(80, 90, 12, 0.863);
+  border-radius: 5px;
+}
+
+.ice {
+  background-color: rgba(55, 218, 255, 0.863);
+  border-radius: 5px;
+}
+
+.psychic {
+  background-color: rgba(255, 39, 187, 0.863);
+  border-radius: 5px;
+}
+
+.ghost {
+  background-color: rgba(95, 27, 173, 0.863);
+  border-radius: 5px;
+}
+
+.steel {
+  background-color: rgba(172, 172, 172, 0.863);
+  border-radius: 5px;
+}
+
+.dark {
+  background-color: rgba(77, 77, 77, 0.863);
+  border-radius: 5px;
+}
+
+.rock {
+  background-color: rgba(67, 74, 65, 0.863);
+  border-radius: 5px;
+}
+
+.bug {
+  background-color: rgba(60, 78, 64, 0.863);
+  border-radius: 5px;
+}
+
+.fairy {
+  background-color: #f6bbdf;
+  border-radius: 5px;
+}
+
+.dragon {
+  background-color: #288e7b;
+  border-radius: 5px;
+}
+
+.fighting {
+  background-color: #ff0c0c;
+  border-radius: 5px;
+}
+/*# sourceMappingURL=onePokemonPage.css.map */

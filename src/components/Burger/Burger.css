@@ -1,0 +1,65 @@
+.burger__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  height: auto;
+  min-height: 350px;
+  margin: 0 auto;
+  padding-top: 22px;
+  background-color: rgba(206, 206, 206, 0.919);
+  z-index: 2;
+  line-height: 0px;
+  width: 236px;
+  position: fixed;
+  left: 0;
+  top: 84px;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.burger__menu--active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.burger__login {
+  width: 55px;
+  height: 55px;
+}
+
+.burger__login path {
+  fill: #003149d9;
+}
+
+.burger_userinfo svg path {
+  fill: #003149d9;
+}
+
+.button--burger {
+  width: 100%;
+}
+
+.button--burger--theme {
+  width: 50%;
+  border: 2px solid #87d4fb;
+}
+
+.user--burger {
+  margin-top: 30px;
+  font-weight: 700;
+  font-size: 24px;
+  height: 32px;
+  color: #003149d9;
+}
+
+.user--burger span {
+  border-color: #003149d9;
+}
+/*# sourceMappingURL=Burger.css.map */

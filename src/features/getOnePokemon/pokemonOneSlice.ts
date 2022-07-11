@@ -55,12 +55,9 @@ export const pokemonOneSlice = createSlice({
             
         },
         fetchPokemonSpecies: (state, action: PayloadAction<string>) => {
-            
         },
         fetchPokemonSpeciesSuccess:(state, action:PayloadAction<object>) => {
             state.species = action.payload
-            console.log(action.payload);
-            
         },
 
     },

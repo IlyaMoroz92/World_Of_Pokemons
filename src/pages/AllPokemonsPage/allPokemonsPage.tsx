@@ -4,7 +4,6 @@ import { Card } from '../../components/Card';
 import { Button } from '../../components/Button';
 import { usePokemons } from '../../features/getPokemons'
 import { Toolsbar } from '../../components/ToolsBar';
-import { useAppDispatch } from "../../redux/hooks";
 import { IPokemon } from '../../features/getOnePokemon/pokemonOneSlice';
 
 export const AllPokemons: any = () => {
@@ -16,7 +15,6 @@ export const AllPokemons: any = () => {
         fetchNextPokemons(page)
     }
 
-    const dispatch = useAppDispatch()
 
     useEffect(() => {
         getNextPokemons(page)

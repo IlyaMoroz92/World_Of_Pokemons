@@ -8,9 +8,7 @@ export function* fetchPokemonSpecies (action: PayloadAction<string>) {
     const response: Response = yield fetch(action.payload)
 
     const species: ISpecies = yield(response.json())
-        
-    console.log(action.payload);
-    
+
     yield put(fetchPokemonSpeciesSuccess(species))
 
 }

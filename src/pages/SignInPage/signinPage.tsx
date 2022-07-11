@@ -35,15 +35,15 @@ export const SignInPage = () => {
 
         signInUser(formData);
 
-        {!login.error
+        !login.error
         &&
-        navigate('/')}
+        navigate('/')
     }
 
     useEffect(() => {   
         if(login.error){
-            {login.error.email && setErrorEmail(login.error.email[0])}
-            {login.error.password && setErrorPassword(login.error.password[0])}
+            login.error.email && setErrorEmail(login.error.email[0])
+            login.error.password && setErrorPassword(login.error.password[0])
         }
     }, [login.error])
 

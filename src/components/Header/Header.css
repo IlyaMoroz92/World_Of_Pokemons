@@ -1,0 +1,88 @@
+.header__main {
+  background-color: #003149;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  line-height: 84px;
+  height: 84px;
+}
+
+.header__burger {
+  position: fixed;
+  margin: 0 15px;
+}
+
+.header__burger svg path {
+  fill: #87d4fb;
+}
+
+.header-theme svg path, .header__user svg path {
+  fill: #87d4fb;
+}
+
+.header-theme {
+  margin-left: 100px;
+}
+
+.button--pokeball {
+  height: 100%;
+  width: 70px;
+}
+
+.button--pokeball * {
+  position: fixed;
+  top: 8px;
+  right: 10px;
+  height: 70px;
+  padding: 0 10px;
+}
+
+.logo * {
+  cursor: pointer;
+  color: red;
+}
+
+.logo * svg path {
+  fill: #87d4fb;
+}
+
+.header__user svg {
+  height: 60px;
+  vertical-align: middle;
+}
+
+.header__logo svg {
+  width: 200px;
+}
+
+.header__logo svg path {
+  fill: #87d4fb;
+  width: 150px;
+  height: 150px;
+}
+
+@media screen and (max-width: 500px) {
+  .header__logo {
+    top: -40px;
+  }
+  .header__logo svg {
+    width: 150px;
+  }
+  .header__logo svg path {
+    fill: #87d4fb;
+    width: 150px;
+    height: 150px;
+  }
+  .button--pokeball * {
+    height: 50px;
+    top: 18px;
+  }
+}
+
+.pokeball {
+  margin-left: 10px;
+}
+/*# sourceMappingURL=Header.css.map */

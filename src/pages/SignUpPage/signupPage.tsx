@@ -41,20 +41,15 @@ export const SignUpPage = () => {
             password: valuePassword
         }
 
-        {valuePassword === valueConfirmPassword
-        &&
-        signUpUser(formData)}
-            
-        {auth.user
-        &&
-        navigate('../verify')}
+        if (valuePassword === valueConfirmPassword) signUpUser(formData)
+        if (auth.user) navigate('../verify')
     }
 
     useEffect(() => {
         if(auth.error){
-            {auth.error.username  && setErrorName(auth.error.username[0])}
-            {auth.error.email && setErrorEmail(auth.error.email[0])}
-            {auth.error.password && setErrorPassword(auth.error.password[0])}
+            auth.error.username  && setErrorName(auth.error.username[0])
+            auth.error.email && setErrorEmail(auth.error.email[0])
+            auth.error.password && setErrorPassword(auth.error.password[0])
         }
     }, [auth.error])
 
@@ -68,11 +63,11 @@ export const SignUpPage = () => {
         inputEmail.current?.addEventListener('focus', focusEmail);
         inputPassword.current?.addEventListener('focus', focusPassword);
 
-        {valueConfirmPassword != valuePassword
+        valueConfirmPassword !== valuePassword
         ?
         setErrorConfirmPassword("You need to enter the same password")
         :
-        setErrorConfirmPassword('')}
+        setErrorConfirmPassword('')
 
         return () => {
             inputName.current?.removeEventListener('focus', focusName);

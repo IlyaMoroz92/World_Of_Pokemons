@@ -34,15 +34,15 @@ export const VerifyPage = () => {
 
         verifyToken(formData);
 
-        {verify.token
+        verify.token
         &&
-        navigate('/signin')}
+        navigate('/signin')
     }
 
     useEffect(() => {
         if(verify.error){
-            {verify.error.uid && setErrorUid(verify.error.uid[0])}
-            {verify.error.token && setErrorToken(verify.error.token[0])}
+            verify.error.uid && setErrorUid(verify.error.uid[0])
+            verify.error.token && setErrorToken(verify.error.token[0])
         }
     }, [verify.error])
     

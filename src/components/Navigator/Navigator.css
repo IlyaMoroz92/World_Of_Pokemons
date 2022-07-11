@@ -1,0 +1,29 @@
+.navigator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.navigator a {
+  text-decoration: none;
+  color: #003149d9;
+}
+
+.navigator * svg {
+  width: 35px;
+  height: 35px;
+}
+
+.navigator * svg path {
+  fill: #003149;
+}
+/*# sourceMappingURL=Navigator.css.map */
