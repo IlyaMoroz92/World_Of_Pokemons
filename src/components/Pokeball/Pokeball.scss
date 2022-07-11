@@ -21,7 +21,12 @@
         flex-direction: column;
         justify-content: space-between;
     }
-
-
 }
 
+
+@media screen and (max-width: 640px) {
+    .pokeball__menu {
+        z-index: 2;
+        width: 145px;
+    }
+}

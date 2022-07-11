@@ -67,8 +67,7 @@
   }
 
   .content {
-    padding: 0 60px  0px 0px;
-    z-index: 200;
+    padding: 0 50px 0px 10px;
   }
 }
 
@@ -95,4 +94,34 @@
 .title {
   font-size: 26px;
   color: #003149d9;
+}
+
+
+@media screen and (max-width: 884px) {
+
+  .title {
+    font-size: 24px;
+  }
+  .sign__form {
+    width: 400px;
+  } 
+}
+
+@media screen and (max-width: 576px) {
+
+  .title {
+    font-size: 24px;
+  }
+  .sign__form {
+    width: 260px;
+    margin-top: 20px;
+  } 
+
+  .sign__form * {
+    font-size: 16px;
+  } 
+
+  .sign__form input {
+    font-size: 16px;
+  } 
 }

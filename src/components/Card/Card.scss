@@ -46,3 +46,11 @@
     width: 78px;
 }
 
+
+
+@media screen and (max-width: 640px) {
+    .card--pokeball{
+        height: 58px;
+        width: 58px;
+    }
+}

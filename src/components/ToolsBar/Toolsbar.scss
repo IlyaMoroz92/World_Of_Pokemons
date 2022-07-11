@@ -29,3 +29,16 @@
     width: 200px;
     border: 2px solid $color-main;
 }
+
+@media screen and (max-width: 640px) {
+    .toolsbar {
+        &__select {
+            width: 100px;
+            margin: 0  30px 0 0;
+        }
+    }
+    .input--toolsbar {
+        width: 100px;
+        margin: 0   10px;
+    }
+}

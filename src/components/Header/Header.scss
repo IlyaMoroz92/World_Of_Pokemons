@@ -68,21 +68,27 @@
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 640px) {
     .header__logo {
-
+        
         & svg {
             width: 150px;
 
         }
-        top: -40px;
+        right: 15px;
         svg path{
             fill: #87d4fb;
-            width: 150px;
-            height: 150px;
+            
         }
     }
 
+    .header-theme{
+        margin-left: 50px;
+    }
+
+    .header__user *{
+        width: 43px;
+    }
     .button--pokeball * {
         height: 50px;
         top: 18px;
@@ -91,4 +97,20 @@
 
 .pokeball {
     margin-left: 10px;
+}
+
+
+@media screen and (max-width: 400px) {
+    .header__logo {
+        
+        & svg {
+            width: 100px;
+
+        }
+        right: 15px;
+        svg path{
+            fill: #87d4fb;
+            
+        }
+    }
 }
