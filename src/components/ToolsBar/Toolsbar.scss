@@ -5,7 +5,6 @@
     flex-direction: row;
     justify-content: space-between;
     
-    
     &:hover {
         color: black;
     }
@@ -28,6 +27,15 @@
     height: 40px;
     width: 200px;
     border: 2px solid $color-main;
+}
+
+.toolsbar__main {
+    display: flex;
+    flex-direction: column;
+}
+
+.search__result {
+    margin: 0 auto;
 }
 
 @media screen and (max-width: 640px) {
