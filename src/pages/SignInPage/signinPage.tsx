@@ -51,17 +51,20 @@ export const SignInPage = () => {
         const focusEmail = () => setErrorEmail('')
         const focusPassword = () => setErrorPassword('')
 
-        inputEmail.current?.addEventListener('focus', focusEmail);    
-        inputPassword.current?.addEventListener('focus', focusPassword);
+        let Email: any = inputEmail.current
+        Email.addEventListener('focus', focusEmail);
+        let Password: any = inputPassword.current
+        Password.addEventListener('focus', focusPassword);
         
         return () => {
-            inputEmail.current?.removeEventListener('focus', focusEmail);
-            inputPassword.current?.removeEventListener('focus', focusPassword);
+            Email.removeEventListener('focus', focusEmail);
+            Password.removeEventListener('focus', focusPassword);
         }
-    })  
+    })
 
     useEffect(() => {
-        inputEmail.current?.focus() 
+        let Input: any = inputEmail.current
+        Input.focus() 
     }, [valueEmail])
 
 

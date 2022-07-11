@@ -47,19 +47,23 @@ export const NewPasswordPage = () => {
         const focusToken = () => setErrorToken('')
         const focusPassword = () => setErrorPassword('')
         
-        inputUid.current?.addEventListener('focus', focusUid)
-        inputToken.current?.addEventListener('focus', focusToken)
-        inputPassword.current?.addEventListener('focus', focusPassword);
+        let Uid: any = inputUid.current
+        Uid.addEventListener('focus', focusUid)
+        let Token: any =  inputToken.current
+        Token.addEventListener('focus', focusToken)
+        let Password: any = inputPassword.current
+        Password.addEventListener('focus', focusPassword);
 
         return () => {
-            inputUid.current?.removeEventListener('focus', focusUid)
-            inputToken.current?.removeEventListener('focus', focusToken)
-            inputPassword.current?.removeEventListener('focus', focusPassword);
+            Uid.removeEventListener('focus', focusUid)
+            Token.removeEventListener('focus', focusToken)
+            Password.removeEventListener('focus', focusPassword);
         }
     })
 
     useEffect(() => {
-        inputPassword.current?.focus()
+        let Password: any = inputPassword.current
+        Password.focus()
         setErrorPassword('');
     }, [valuePassword])
 

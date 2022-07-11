@@ -13,6 +13,7 @@ export function* resetPassword(action: PayloadAction<actionResetPassword>){
             "Content-Type": "application/json"
         }
     })
+    console.log(response);
 }
 
 export function* resetPasswordSaga() {

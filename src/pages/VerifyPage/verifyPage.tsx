@@ -50,16 +50,20 @@ export const VerifyPage = () => {
         const focusUid = () => setErrorUid('')
         const focusToken = () => setErrorToken('')
 
-        inputUid.current?.addEventListener('focus', focusUid)
-        inputToken.current?.addEventListener('focus', focusToken)
+        let Uid: any = inputUid.current
+        Uid.addEventListener('focus', focusUid)
+        let Token: any =  inputToken.current
+        Token.addEventListener('focus', focusToken)
+
         return () => {
-            inputUid.current?.removeEventListener('focus', focusUid)
-            inputToken.current?.removeEventListener('focus', focusToken)
+            Uid.removeEventListener('focus', focusUid)
+            Token.removeEventListener('focus', focusToken)
         }
     })
 
     useEffect(() => {
-        inputUid.current?.focus()
+        let Uid: any = inputUid.current
+        Uid.focus()
     }, [valueUid])
 
     return (

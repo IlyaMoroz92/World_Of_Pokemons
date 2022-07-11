@@ -15,7 +15,6 @@ export const AllPokemons: any = () => {
         fetchNextPokemons(page)
     }
 
-
     useEffect(() => {
         getNextPokemons(page)
     }, [page])
@@ -29,7 +28,6 @@ export const AllPokemons: any = () => {
             setPage(page - 20)
         }
     }
-
     return (
         <>
         <Toolsbar/>

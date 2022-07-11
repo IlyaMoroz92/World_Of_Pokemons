@@ -10,7 +10,9 @@ export function* newPassword(action: PayloadAction<actionNewPassword>) {
                 'accept': 'application/json',
                 "Content-Type": "application/json"
             }
+            
         })
+        console.log(response);
 }
 
 export function* newPasswordSaga() {
