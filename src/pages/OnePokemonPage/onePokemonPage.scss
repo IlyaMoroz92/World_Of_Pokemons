@@ -132,3 +132,16 @@
     border-radius: 5px;
 }
 
+@media screen and (max-width: 576px) {
+    .pokemon__page img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .pokemon__page img {
+        width: 150px;
+        height: 150px;
+    }
+}
