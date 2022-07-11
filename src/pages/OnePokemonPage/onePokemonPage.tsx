@@ -15,13 +15,13 @@ export const OnePokemon = () => {
     
     useEffect(() => {
         getPokemon(idPokemon)
-    }, [idPokemon])
+    }, [idPokemon, getPokemon])
 
     useEffect(() => {
         if(pokemon) {
         getSpecies(pokemon.species.url)
         }
-    }, [pokemon])
+    }, [pokemon, getSpecies])
 
     return (
         <div className="pokemon__page-container">
