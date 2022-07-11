@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { Input } from '../Input'
 import './Toolsbar.scss'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Card } from '../Card';
 
 
@@ -22,23 +22,16 @@ type PokemonSearch = {
 
 export const Toolsbar = (props: ToolsbarProps) => {
 
-
-
     const [pokemon, setPokemon] = useState('pikachu')
     const [pokemonData, setPokemonData] = useState<[Data]>()
-    const [pokemonType, setPokemonType] = useState('')
 
     const getSearchPokemon = async () => {
         
-
-        
-
         const toArray: any  = []
         try {
             const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`
             const res: PokemonSearch = await axios.get(url)
             toArray.push(res.data)
-            setPokemonType(res.data.types[0].type.name)
             setPokemonData(toArray)
 
         } catch (e) {
