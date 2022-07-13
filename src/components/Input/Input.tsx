@@ -25,7 +25,7 @@ export const Input = React.forwardRef(({title, placeholder, disabled, className,
                 value={value}
                 ref={ref}
             />
-            {type === 'password' && <p className={`input__error input__error--${className}`}>{errorMessage}</p>}
+            <p className={`input__error input__error--${className}`}>{errorMessage}</p>
         </div>
     )
 })

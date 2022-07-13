@@ -22,6 +22,26 @@ export const Burger = (props: BurgerProps) => {
 
     return (
         <div className={`burger__menu burger__menu--${props.className}`}>
+            {!userInfo ?
+                <div>
+                    <Link to='/signin'><Login className='burger__login'/></Link>
+                </div>
+                :
+                <div className="user__info">
+                    <User className='burger'/>
+                        <Button
+                            text='Log Out'
+                            className='text'
+                            onClick={logOut}
+                        />
+                        <Link to='/resetpassword'>
+                            <Button
+                                text='Reset password'
+                                className='text'
+                            />
+                        </Link>
+                </div>
+            }
                     <Link to='/'>
                         <Button
                             text='All'
@@ -46,26 +66,6 @@ export const Burger = (props: BurgerProps) => {
                             className='text'
                         />
                     </Link>
-                        {!userInfo ?
-                            <div>
-                                <Link to='/signin'><Login className='burger__login'/></Link>
-                            </div>
-                            :
-                            <div className="user__info">
-                                <User className='burger'/>
-                                <Button
-                                text='Log Out'
-                                className='text'
-                                onClick={logOut}
-                                />
-                                <Link to='/resetpassword'>
-                                    <Button
-                                        text='Reset password'
-                                        className='text'
-                                    />
-                                </Link>
-                            </div>
-                        }
                     </div>
     )
 }

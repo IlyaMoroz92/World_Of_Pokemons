@@ -5,9 +5,12 @@ import { useNavigate } from "react-router-dom";
 import { useVerify } from "../../features/verify/useVerify"
 import { useAppSelector } from "../../redux/hooks";
 import React, { useState, useEffect } from "react";
+import { useTheme } from '../../features/theme/useTheme'
 
 
 export const VerifyPage = () => {
+
+    const {theme} = useTheme()
 
     const [valueUid, setValueUid] = useState('');
     const [errorUid, setErrorUid] = useState('');
@@ -68,11 +71,11 @@ export const VerifyPage = () => {
 
     return (
         <>
-            <Title text='Verify' className='title'/>
-            <div className='sign__form'>
+            <Title text='Verify' className={`title title--${theme}`}/>
+            <div className={`sign__form sign__form--${theme}`}>
                 <Input
                     title='Uid'
-                    className='input'
+                    className={theme}
                     type='text'
                     placeholder='Enter your uid'
                     onChange={changeInputUid}
@@ -82,7 +85,7 @@ export const VerifyPage = () => {
                 />
                 <Input
                     title='Token'
-                    className='input'
+                    className={theme}
                     type='text'
                     placeholder='Enter your token'
                     onChange={changeInputToken}
@@ -91,7 +94,7 @@ export const VerifyPage = () => {
                     ref={inputToken}
                 />
                 <Button
-                    className='text'
+                    className={`text text--${theme}`}
                     type='button'
                     onClick={handleSubmit}
                     text='Verify '

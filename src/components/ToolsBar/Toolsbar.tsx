@@ -3,7 +3,7 @@ import { Input } from '../Input'
 import './Toolsbar.scss'
 import { useState } from 'react';
 import { Card } from '../Card';
-
+import { useTheme } from '../../features/theme/useTheme'
 
 type ToolsbarProps = {
     className?: string
@@ -22,6 +22,7 @@ type PokemonSearch = {
 
 export const Toolsbar = (props: ToolsbarProps) => {
 
+    const {theme} = useTheme()
     const [pokemon, setPokemon] = useState('pikachu')
     const [pokemonData, setPokemonData] = useState<[Data]>()
 
@@ -58,7 +59,7 @@ export const Toolsbar = (props: ToolsbarProps) => {
                     <label>
                         <Input
                             onChange={handleChange}
-                            className='toolsbar'
+                            className={`toolsbar input--toolsbar--${theme}`}
                             type='text'
                             placeholder=' 🔍 Search...'
                         />
@@ -67,7 +68,7 @@ export const Toolsbar = (props: ToolsbarProps) => {
                 
             </div>
             <div className="sort">
-            <select className='toolsbar__select'> Sort
+            <select className={`toolsbar__select toolsbar__select--${theme}`}> Sort
                 <option value="id">Id</option>
                 <option value="id">Name</option>
                 <option value="weight">Weight</option>

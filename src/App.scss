@@ -1,3 +1,4 @@
+@import './styles/variables';
 .App {
   text-align: center;
   height: 100vh;
@@ -76,24 +77,32 @@
 }
 
 .theme--dark {
-  background-color: #003149d9;
+  background-color: $color-main;
 }
 
 .sign__form {
-  width: 600px;
+  max-width: 500px;
   margin: 0 auto;
-  color: #003149d9;
+  color: $color-main;
   font-size: 18px;
   font-weight: bold;
-  border: 2px solid #003149d9;
+  /* border: 2px solid $color-main; */
   border-radius: 5px;
   padding: 10px;
-  margin-top: 50px;
+  margin-top: 20px;
+
+  &--dark {
+    color: $color-grey;
+
+    & a {
+      color: $color-main2;
+    }
+  }
 } 
 
 .title {
-  font-size: 26px;
-  color: #003149d9;
+  font-size: 24px;
+  color: $color-main;
 }
 
 

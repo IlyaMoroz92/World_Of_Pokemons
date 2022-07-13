@@ -20,6 +20,11 @@
     }
 }
 
+.pokemon__title--dark {
+    color: $color-grey;
+}
+
+
 
 .card__pokemon {
     padding: 10px;
@@ -131,6 +136,7 @@
     background-color: rgb(255, 12, 12);
     border-radius: 5px;
 }
+
 
 @media screen and (max-width: 576px) {
     .pokemon__page img {

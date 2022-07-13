@@ -5,9 +5,11 @@ import { Button } from '../../components/Button';
 import { usePokemons } from '../../features/getPokemons'
 import { Toolsbar } from '../../components/ToolsBar';
 import { IPokemon } from '../../features/getOnePokemon/pokemonOneSlice';
+import { useTheme } from '../../features/theme/useTheme'
 
 export const AllPokemons: any = () => {
 
+    const {theme} = useTheme()
     const {pokemonsInfo, fetchNextPokemons} = usePokemons()
     const [page, setPage] = useState(0)
     
@@ -54,14 +56,14 @@ export const AllPokemons: any = () => {
                     onClick={() => {
                         showPrevPokemons()
                     }}
-                    className='text'
+                    className={`text text--${theme}`}
                     text={'Previous'}
                 />}
                 { page < 1154 && <Button 
                     onClick={() => {
                         showNextPokemons()
                     }}
-                    className='text'
+                    className={`text text--${theme}`}
                     text={'Next'}
                 />} 
             </div>

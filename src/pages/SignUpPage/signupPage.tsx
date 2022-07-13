@@ -6,8 +6,11 @@ import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../redux/hooks";
 import { useAuth } from '../../features/auth/useAuth'
 import React, { useState, useEffect } from "react";
+import { useTheme } from '../../features/theme/useTheme'
 
 export const SignUpPage = () => {
+
+    const {theme} = useTheme()
 
     const [valueName, setValueName] = useState('');
     const [errorName, setErrorName] = useState('');
@@ -87,11 +90,11 @@ export const SignUpPage = () => {
 
     return (
         <>
-            <Title text='Sign Up' className='title'/>
-            <div className='sign__form'>
+            <Title text='Sign Up' className={`title title--${theme}`}/>
+            <div className={`sign__form sign__form--${theme}`}>
                 <Input
                     title='Name'
-                    className='input'
+                    className={theme}
                     type='text'
                     placeholder='Введите имя'
                     onChange={changeInputName}
@@ -102,7 +105,7 @@ export const SignUpPage = () => {
                 />
                 <Input
                     title='Email'
-                    className='password'
+                    className={theme}
                     type='email'
                     placeholder='Enter your email'
                     onChange={changeInputEmail}
@@ -113,7 +116,7 @@ export const SignUpPage = () => {
                 />
                 <Input
                     title='Password'
-                    className='password'
+                    className={`input input--${theme}`}
                     type='password'
                     placeholder='Enter your password'
                     onChange={changeInputPassword}
@@ -124,7 +127,7 @@ export const SignUpPage = () => {
                 />
                 <Input
                     title='Confirm password'
-                    className='password'
+                    className={`input input--${theme}`}
                     type='password'
                     placeholder='Повторите пароль'
                     onChange={changeInputConfirmPassword}
@@ -134,7 +137,7 @@ export const SignUpPage = () => {
                     errorMessage={errorConfirmPassword}
                 />
                 <Button
-                    className='text'
+                    className={`text text--${theme}`}
                     type='button'
                     onClick={handleSubmit}
                     text='Sign Up '

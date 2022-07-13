@@ -5,9 +5,12 @@ import {NavLink} from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 import { useResetPassword } from "../../features/resetPassword/useResetPassword";
 import { useState, useRef } from "react";
+import { useTheme } from '../../features/theme/useTheme'
 
 
 export const ResetPasswordPage = () => {
+
+    const {theme} = useTheme()
 
     const [valueEmail, setValueEmail] = useState('');
     const [errorEmail] = useState('');
@@ -32,11 +35,11 @@ export const ResetPasswordPage = () => {
 
     return (
         <>
-            <Title text='Reset Password' className='title'/>
-            <div className='sign__form'>
+            <Title text='Reset Password' className={`title title--${theme}`}/>
+            <div className={`sign__form sign__form--${theme}`}>
             <Input
                     title='Email'
-                    className='password'
+                    className={theme}
                     type='email'
                     placeholder='Enter your email'
                     onChange={changeInputEmail}
@@ -45,7 +48,7 @@ export const ResetPasswordPage = () => {
                     ref={inputEmail}
                 />
                 <Button
-                    className='text'
+                    className={`text text--${theme}`}
                     type='button'
                     onClick={handleSubmit}
                     text='Reset '

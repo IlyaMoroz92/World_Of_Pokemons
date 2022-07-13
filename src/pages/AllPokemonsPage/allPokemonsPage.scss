@@ -1,3 +1,5 @@
+@import '../../styles/variables';
+
 .all {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr  1fr 1fr;
@@ -31,4 +33,14 @@
 .buttons__pagination {
     display: flex;
     margin: 20px auto;
+}
+
+.text--dark {
+    border-color: $color-grey;
+    color: $color-grey;
+
+    &:hover {
+        color: $color-main;
+        background-color: $color-grey;
+    }
 }

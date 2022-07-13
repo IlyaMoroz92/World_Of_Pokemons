@@ -5,10 +5,11 @@ import { useParams } from "react-router-dom"
 import { Picture } from '../../components/Picture';
 import { Likebar } from '../../components/Likebar';
 import { Navigator } from '../../components/Navigator';
-
+import { useTheme } from '../../features/theme/useTheme'
 
 export const OnePokemon = () => {
 
+    const {theme} = useTheme()
     const {getPokemon, pokemon, species, getSpecies} = useOnePokemon()
     const { id } = useParams();
     const idPokemon = Number(id)
@@ -28,8 +29,8 @@ export const OnePokemon = () => {
         <div className='pokemon__page' key={pokemon?.id}>
             <div className="pokemon__page-left">
                 <Picture src={`${pokemon?.sprites.other.dream_world.front_default}`} alt={pokemon?.name} />
-                <h2 className='pokemon__title'>{pokemon?.name}</h2> 
-                <Likebar pokemonId={pokemon?.id}/>
+                <h2 className={`pokemon__title pokemon__title--${theme}`}>{pokemon?.name}</h2> 
+                <Likebar className ={theme} pokemonId={pokemon?.id}/>
             </div>
             <div className="pokemon__page-right">
                 <div className="card__pokemon card__options">
@@ -56,7 +57,7 @@ export const OnePokemon = () => {
                 </div>
             </div>
             </div>
-            <Navigator id={pokemon?.id} />
+            <Navigator className={theme} id={pokemon?.id} />
         </div>
     )
 }

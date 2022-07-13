@@ -6,9 +6,14 @@ import { useLogin } from "../../features/login";
 import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../redux/hooks";
 import { useState, useRef, useEffect } from "react";
+import { useTheme } from '../../features/theme/useTheme'
+
+
 
 
 export const SignInPage = () => {
+
+    const {theme} = useTheme()
 
     const [valueEmail, setValueEmail] = useState('');
     const [errorEmail, setErrorEmail] = useState('');
@@ -42,6 +47,9 @@ export const SignInPage = () => {
 
     useEffect(() => {   
         if(login.error){
+            console.log(login.error.email[0]);
+            console.log(login.error.password[0]);
+            
             login.error.email && setErrorEmail(login.error.email[0])
             login.error.password && setErrorPassword(login.error.password[0])
         }
@@ -66,15 +74,14 @@ export const SignInPage = () => {
         let Input: any = inputEmail.current
         Input.focus() 
     }, [valueEmail])
-
-
+    
     return (
         <>
-            <Title text='Sign In' className='title'/>
-            <div className='sign__form'>
+            <Title text='Sign In' className={`title title--${theme}`}/>
+            <div className={`sign__form sign__form--${theme}`}>
                 <Input
                     title='Email'
-                    className='password'
+                    className={theme}
                     type='email'
                     placeholder='Enter your email'
                     onChange={changeInputEmail}
@@ -83,7 +90,7 @@ export const SignInPage = () => {
                 />
                 <Input
                     title='Password'
-                    className='password'
+                    className={theme}
                     type='password'
                     placeholder='Enter your password'
                     onChange={changeInputPassword}
@@ -91,7 +98,7 @@ export const SignInPage = () => {
                     ref={inputPassword}
                 />
                 <Button
-                    className='text'
+                    className={`text text--${theme}`}
                     type='button'
                     onClick={handleSubmit}
                     text='Sign In'

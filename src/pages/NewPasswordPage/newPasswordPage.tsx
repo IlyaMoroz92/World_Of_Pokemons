@@ -5,9 +5,12 @@ import {NavLink} from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 import { useNewPassword } from "../../features/newPassword/useNewPassword";
 import  { useState, useRef, useEffect } from "react";
+import { useTheme } from '../../features/theme/useTheme'
 
 
 export const NewPasswordPage = () => {
+
+    const {theme} = useTheme()
 
     const [valueUid, setValueUid] = useState('');
     const [errorUid, setErrorUid] = useState('');
@@ -70,11 +73,11 @@ export const NewPasswordPage = () => {
 
     return (
         <>
-            <Title text='New Password' className='title'/>
-            <div className='sign__form'>
+            <Title text='New Password' className={`title title--${theme}`}/>
+            <div className={`sign__form sign__form--${theme}`}>
                 <Input
                     title='Uid'
-                    className='input'
+                    className={theme}
                     type='text'
                     placeholder='Enter your uid'
                     onChange={changeInputUid}
@@ -84,7 +87,7 @@ export const NewPasswordPage = () => {
                 />
                 <Input
                     title='Token'
-                    className='input'
+                    className={theme}
                     type='text'
                     placeholder='Enter your token'
                     onChange={changeInputToken}
@@ -94,7 +97,7 @@ export const NewPasswordPage = () => {
                 />
                 <Input
                     title='New Password'
-                    className='password'
+                    className={theme}
                     type='password'
                     placeholder='Enter your new password'
                     onChange={changeInputPassword}
@@ -104,7 +107,7 @@ export const NewPasswordPage = () => {
                     errorMessage={errorPassword}
                 />
                 <Button
-                    className='text'
+                    className={`text text--${theme}`}
                     type='button'
                     onClick={handleSubmit}
                     text='Set password'

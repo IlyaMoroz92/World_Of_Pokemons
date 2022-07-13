@@ -18,7 +18,17 @@
         height: 35px;
     & path{
         fill: $color-header;
+        }
     }
-}
+
+    &--dark {
+        & a {
+            color: $color-grey;
+        }
+
+        & svg path{
+            fill: $color-grey;
+        }
+    }
 }
 
