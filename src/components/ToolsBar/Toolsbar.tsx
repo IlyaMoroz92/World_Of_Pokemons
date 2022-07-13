@@ -4,6 +4,7 @@ import './Toolsbar.scss'
 import { useState } from 'react';
 import { Card } from '../Card';
 import { useTheme } from '../../features/theme/useTheme'
+import { Title } from '../Title';
 
 type ToolsbarProps = {
     className?: string
@@ -41,6 +42,7 @@ export const Toolsbar = (props: ToolsbarProps) => {
     }
 
     const handleChange = (e: any) => {
+        setPokemonData(undefined)
         setPokemon(e.target.value.toLowerCase())
     }
 
@@ -65,7 +67,6 @@ export const Toolsbar = (props: ToolsbarProps) => {
                         />
                     </label>
                 </form>
-                
             </div>
             <div className="sort">
             <select className={`toolsbar__select toolsbar__select--${theme}`}> Sort
@@ -77,23 +78,24 @@ export const Toolsbar = (props: ToolsbarProps) => {
             </select>
             </div>
         </div>
-                    <div className='search__result'>
                     {
                     pokemonData?.map((data) => {
                         return(
-                            <Card
-                                titleId={true}
-                                likebar={true}
-                                nameId={true}
-                                id={data.id}
-                                name={data.name}
-                                sprites={data.sprites.other.dream_world.front_default}
-                                key={data.id}
-                            />
+                            <div className='search__result' key={data.id}>
+                                <Title className='title' text='Search result:'/>
+                                <Card
+                                    titleId={true}
+                                    likebar={true}
+                                    nameId={true}
+                                    id={data.id}
+                                    name={data.name}
+                                    sprites={data.sprites.other.dream_world.front_default}
+                                    
+                                />
+                            </div> 
                             )
                     })
                     }
-                </div> 
         </div>
     )
 }
