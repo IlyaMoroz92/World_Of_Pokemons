@@ -29,17 +29,19 @@ export const Burger = (props: BurgerProps) => {
                 :
                 <div className="user__info">
                     <User className='burger'/>
+                    <Link to='/signin'>
                         <Button
                             text='Log Out'
                             className='text'
                             onClick={logOut}
                         />
-                        <Link to='/resetpassword'>
-                            <Button
-                                text='Reset password'
-                                className='text'
-                            />
-                        </Link>
+                    </Link>
+                    <Link to='/resetpassword'>
+                        <Button
+                            text='Reset password'
+                            className='text'
+                        />
+                    </Link>
                 </div>
             }
                     <Link to='/'>

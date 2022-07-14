@@ -3,6 +3,7 @@ import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 export type loginUserPayload = {
     email: string | [string],
     password: string | [string],
+    detail?: string | [string],
 }
 
 export type loginToken = {

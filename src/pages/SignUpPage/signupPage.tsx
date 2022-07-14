@@ -49,6 +49,13 @@ export const SignUpPage = () => {
     }
 
     useEffect(() => {
+        if(auth.user){
+            navigate('../verify')
+        }
+    }, [auth.user])
+
+
+    useEffect(() => {
         if(auth.error){
             auth.error.username  && setErrorName(auth.error.username[0])
             auth.error.email && setErrorEmail(auth.error.email[0])
@@ -88,6 +95,8 @@ export const SignUpPage = () => {
         setErrorName('');
     }, [valueName])
 
+    console.log(auth);
+    
     return (
         <>
             <Title text='Sign Up' className={`title title--${theme}`}/>

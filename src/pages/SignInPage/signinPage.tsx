@@ -7,8 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../redux/hooks";
 import { useState, useRef, useEffect } from "react";
 import { useTheme } from '../../features/theme/useTheme'
-
-
+import {useUserInfo } from '../../features/userInfo/useUserInfo'
 
 
 export const SignInPage = () => {
@@ -27,8 +26,16 @@ export const SignInPage = () => {
     const changeInputPassword = (event: any): void => setValuePassword(event.target.value)
 
     const login = useAppSelector(state => state.login);
+
     
     const { signInUser } = useLogin();
+    const { userInfo } = useUserInfo();
+
+    useEffect(() => {
+        if(userInfo?.email){
+            navigate('/')
+        }
+    }, [userInfo])
 
     const navigate = useNavigate();
 
@@ -37,21 +44,14 @@ export const SignInPage = () => {
             email: valueEmail,
             password: valuePassword
         }
-
         signInUser(formData);
-
-        !login.error
-        &&
-        navigate('/')
     }
 
-    useEffect(() => {   
+    useEffect(() => {
         if(login.error){
-            console.log(login.error.email[0]);
-            console.log(login.error.password[0]);
-            
-            login.error.email && setErrorEmail(login.error.email[0])
-            login.error.password && setErrorPassword(login.error.password[0])
+            navigate('/signin')
+            login.error && setErrorEmail('check your email or password')
+            login.error && setErrorPassword('check your email or password')
         }
     }, [login.error])
 
@@ -74,6 +74,8 @@ export const SignInPage = () => {
         let Input: any = inputEmail.current
         Input.focus() 
     }, [valueEmail])
+
+    console.log(login);
     
     return (
         <>
@@ -85,7 +87,7 @@ export const SignInPage = () => {
                     type='email'
                     placeholder='Enter your email'
                     onChange={changeInputEmail}
-                    errorMessage={errorEmail}
+                    /* errorMessage={errorEmail} */
                     ref={inputEmail}
                 />
                 <Input

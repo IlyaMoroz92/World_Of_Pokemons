@@ -16,6 +16,7 @@ export const VerifyPage = () => {
     const [errorUid, setErrorUid] = useState('');
     const [valueToken, setValueToken] = useState('');
     const [errorToken, setErrorToken] = useState('');
+    const auth = useAppSelector(state => state.auth);
 
     const inputUid = React.useRef<HTMLInputElement>(null);
     const inputToken = React.useRef<HTMLInputElement>(null);
@@ -48,7 +49,14 @@ export const VerifyPage = () => {
             verify.error.token && setErrorToken(verify.error.token[0])
         }
     }, [verify.error])
-    
+    console.log(verify);
+
+    useEffect(() => {
+        if(auth.user){
+            /* navigate('/signin') */
+        }
+    }, [auth.user])
+
     useEffect(() => {
         const focusUid = () => setErrorUid('')
         const focusToken = () => setErrorToken('')

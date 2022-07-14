@@ -28,16 +28,14 @@ export const Toolsbar = (props: ToolsbarProps) => {
     const [pokemonData, setPokemonData] = useState<[Data]>()
 
     const getSearchPokemon = async () => {
-        
+
         const toArray: any  = []
         try {
             const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`
             const res: PokemonSearch = await axios.get(url)
             toArray.push(res.data)
             setPokemonData(toArray)
-
-        } catch (e) {
-            console.log(e);
+            } catch (e) {
         }
     }
 
@@ -51,8 +49,6 @@ export const Toolsbar = (props: ToolsbarProps) => {
         getSearchPokemon()
     }
 
-    console.log(pokemonData);
-    
     return (
         <div className='toolsbar__main'>
         <div className= {`toolsbar toolsbar--${props.className}`}>
@@ -78,24 +74,23 @@ export const Toolsbar = (props: ToolsbarProps) => {
             </select>
             </div>
         </div>
-                    {
-                    pokemonData?.map((data) => {
-                        return(
-                            <div className='search__result' key={data.id}>
-                                <Title className='title' text='Search result:'/>
-                                <Card
-                                    titleId={true}
-                                    likebar={true}
-                                    nameId={true}
-                                    id={data.id}
-                                    name={data.name}
-                                    sprites={data.sprites.other.dream_world.front_default}
-                                    
-                                />
-                            </div> 
-                            )
-                    })
-                    }
+            {
+            pokemonData?.map((data) => {
+                return(
+                    <div className='search__result' key={data.id}>
+                        <Title className='title' text='Search result:'/>
+                        <Card
+                            titleId={true}
+                            likebar={true}
+                            nameId={true}
+                            id={data.id}
+                            name={data.name}
+                            sprites={data.sprites.other.dream_world.front_default}
+                        />
+                    </div>
+                )
+            })
+            }
         </div>
     )
 }

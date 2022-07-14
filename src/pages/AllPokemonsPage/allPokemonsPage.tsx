@@ -7,8 +7,11 @@ import { Toolsbar } from '../../components/ToolsBar';
 import { IPokemon } from '../../features/getOnePokemon/pokemonOneSlice';
 import { useTheme } from '../../features/theme/useTheme'
 
-export const AllPokemons: any = () => {
 
+
+
+export const AllPokemons: any = () => {
+    
     const {theme} = useTheme()
     const {pokemonsInfo, fetchNextPokemons} = usePokemons()
     const [page, setPage] = useState(0)
