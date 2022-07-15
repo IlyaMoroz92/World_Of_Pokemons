@@ -91,19 +91,38 @@ export const pokemonsSlice = createSlice({
                     state.pokemonsInfo = state.pokemonsInfo.map(pokemon => state.isPokeballPokemon.some(id => id === pokemon.id) ? {...pokemon, pokeball: true} : {...pokemon, pokeball: false} )
                 }
         },
-        sortIdPokemons: (state) => {
+
+        sortIdPokemonsMore: (state) => {
                 if(state.pokemonsInfo) {
                     state.pokemonsInfo = state.pokemonsInfo.sort((a: any, b: any) => a.id - b.id)
                 }
         },
 
-        sortNamePokemons: (state) => {
+        sortIdPokemonsLess: (state) => {
+                if(state.pokemonsInfo) {
+                    state.pokemonsInfo = state.pokemonsInfo.sort((a: any, b: any) => b.id - a.id)
+                }
+        },
+
+        sortNamePokemonsMore: (state) => {
                 if(state.pokemonsInfo) {
                     state.pokemonsInfo = state.pokemonsInfo.sort((a: any, b: any) => {
                         if (a.name > b.name) {
                             return 1; }
                         if (a.name < b.name) {
                             return -1; }
+                        return 0;
+                    })
+                }
+        },
+
+        sortNamePokemonsLess: (state) => {
+                if(state.pokemonsInfo) {
+                    state.pokemonsInfo = state.pokemonsInfo.sort((a: any, b: any) => {
+                        if (a.name > b.name) {
+                            return -1; }
+                        if (a.name < b.name) {
+                            return 1; }
                         return 0;
                     })
                 }
@@ -119,7 +138,9 @@ export const {
     fetchPokemonsInfoFailure,
     likePokemon,
     pokeballPokemon,
-    sortIdPokemons,
-    sortNamePokemons} = pokemonsSlice.actions
+    sortIdPokemonsMore,
+    sortIdPokemonsLess, 
+    sortNamePokemonsMore,
+    sortNamePokemonsLess} = pokemonsSlice.actions
 
 export default pokemonsSlice.reducer

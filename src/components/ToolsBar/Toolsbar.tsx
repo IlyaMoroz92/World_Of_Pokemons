@@ -1,10 +1,12 @@
 import axios from 'axios'
 import { Input } from '../Input'
 import './Toolsbar.scss'
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 import { Card } from '../Card';
 import { useTheme } from '../../features/theme/useTheme'
+import { usePokemons } from '../../features/getPokemons/usePokemons'
 import { Title } from '../Title';
+
 
 type ToolsbarProps = {
     className?: string
@@ -22,6 +24,30 @@ type PokemonSearch = {
 }
 
 export const Toolsbar = (props: ToolsbarProps) => {
+
+    const {pokemonsInfo, getSortIdPokemonsMore, getSortIdPokemonsLess, getSortNamePokemonsMore, getSortNamePokemonsLess} = usePokemons()
+
+
+/*     useEffect(() => {
+        sortIdPokemonsMore()
+    }, [pokemonsInfo]) */
+
+    const sortIdPokemonsMore = (): void => {
+        getSortIdPokemonsMore()
+    }
+    
+    const sortIdPokemonsLess = (): void => {
+        getSortIdPokemonsLess()
+    }
+
+    const sortNamePokemonsMore = (): void => {
+        getSortNamePokemonsMore()
+    }
+
+    const sortNamePokemonsLess = (): void => {
+        getSortNamePokemonsLess()
+    }
+
 
     const {theme} = useTheme()
     const [pokemon, setPokemon] = useState('pikachu')
@@ -49,6 +75,18 @@ export const Toolsbar = (props: ToolsbarProps) => {
         getSearchPokemon()
     }
 
+    const getSortList = (event:any) => {
+        if(event.target.value === 'id+') {
+            sortIdPokemonsMore()
+        } else if (event.target.value === 'id-') {
+            sortIdPokemonsLess()
+        } else if (event.target.value === 'name+') {
+            sortNamePokemonsMore()
+        } else if (event.target.value === 'name-') {
+            sortNamePokemonsLess()
+        }
+    }
+
     return (
         <div className='toolsbar__main'>
         <div className= {`toolsbar toolsbar--${props.className}`}>
@@ -65,12 +103,11 @@ export const Toolsbar = (props: ToolsbarProps) => {
                 </form>
             </div>
             <div className="toolsbar__sort">
-            <select className={`toolsbar__select toolsbar__select--${theme}`}> Sort
-                <option value="id">Id</option>
-                <option value="id">Name</option>
-                <option value="weight">Weight</option>
-                <option value="height">Height</option>
-                <option value="base_experience">Experience</option>
+            <select onChange={getSortList} className={`toolsbar__select toolsbar__select--${theme}`}> Sort
+                <option value="id+">Id ↑</option>
+                <option value="id-">Id ↓</option>
+                <option value="name+">Name ↑</option>
+                <option value="name-">Name ↓</option>
             </select>
             </div>
         </div>

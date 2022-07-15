@@ -1,6 +1,6 @@
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { IPokemon } from "../getOnePokemon/pokemonOneSlice";
-import { fetchPokemons, likePokemon, pokeballPokemon, sortIdPokemons, sortNamePokemons } from "./pokemonsSlice";
+import { fetchPokemons, likePokemon, pokeballPokemon, sortIdPokemonsMore, sortIdPokemonsLess, sortNamePokemonsMore, sortNamePokemonsLess} from "./pokemonsSlice";
 
 export const usePokemons = () => {
     const pokemons = useAppSelector( state => state.pokemons.content)
@@ -13,12 +13,20 @@ export const usePokemons = () => {
         dispatch(fetchPokemons(page))
     }
 
-    const getSortIdPokemons = () => {
-        dispatch(sortIdPokemons())
+    const getSortIdPokemonsMore = () => {
+        dispatch(sortIdPokemonsMore())
     }
 
-    const getSortNamePokemons = () => {
-        dispatch(sortNamePokemons())
+    const getSortIdPokemonsLess = () => {
+        dispatch(sortIdPokemonsLess())
+    }
+
+    const getSortNamePokemonsMore = () => {
+        dispatch(sortNamePokemonsMore())
+    }
+
+    const getSortNamePokemonsLess = () => {
+        dispatch(sortNamePokemonsLess())
     }
 
     const onLikePokemon = (id: number) => {
@@ -39,8 +47,11 @@ export const usePokemons = () => {
         onPokeballPokemon,
         getInfoPokemon,
         fetchNextPokemons,
-        getSortIdPokemons,
-        getSortNamePokemons,
+        getSortIdPokemonsMore,
+        getSortIdPokemonsLess,
+        getSortNamePokemonsMore,
+        getSortNamePokemonsLess,
+
     }
 }
 

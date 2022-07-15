@@ -13,7 +13,7 @@ import { useTheme } from '../../features/theme/useTheme'
 export const AllPokemons: any = () => {
 
     const {theme} = useTheme()
-    const {pokemonsInfo, fetchNextPokemons, getSortIdPokemons, getSortNamePokemons} = usePokemons()
+    const {pokemonsInfo, fetchNextPokemons} = usePokemons()
     const [page, setPage] = useState(0)
     
     const getNextPokemons = (page:number): void => {
@@ -25,6 +25,11 @@ export const AllPokemons: any = () => {
         getNextPokemons(newPage)
     }, [page])
 
+
+    useEffect(() => {
+
+    }, [pokemonsInfo])
+
     const showNextPokemons = () => {
         setPage(page + 20)
     }
@@ -35,33 +40,9 @@ export const AllPokemons: any = () => {
         }
     }
 
-    const sortIdPokemons = (): void => {
-        getSortIdPokemons()
-    }
-
-    const sortNamePokemons = (): void => {
-        getSortNamePokemons()
-    }
-
-    console.log(pokemonsInfo);
-    
     return (
         <>
         <Toolsbar/>
-        <Button 
-            onClick={() => {
-                sortNamePokemons()
-            }}
-            className={`text text--${theme}`}
-            text={'Sort Name'}
-        />
-        <Button 
-            onClick={() => {
-                sortIdPokemons()
-            }}
-            className={`text text--${theme}`}
-            text={'Sort ID'}
-        />
         <div className='all'>
             {
                 pokemonsInfo?.map((item: IPokemon) => {
