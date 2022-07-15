@@ -12,7 +12,7 @@ export const Pokeball = (props: PokeballProps) => {
     const { pokemonsInfo } = usePokemons()
 
     return (
-        <div className={`pokeball__menu pokeball__menu--${props.className}`}>
+        <div  onClick={e => e.stopPropagation()} className={`pokeball__menu pokeball__menu--${props.className}`}>
             {pokemonsInfo?.map((el: IPokemon) => {
             return (
             el.pokeball

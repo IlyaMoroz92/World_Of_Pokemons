@@ -60,7 +60,11 @@ export const Header = (props: HeaderProps) => {
                 <Button
                     src={pokeball==='active' ? PokeballOpen : PokeballClose}
                     className={'pokeball'}
-                    onClick={togglePokeball}
+                    onClick={e => {
+                        e.stopPropagation();
+                        togglePokeball()
+                        }
+                    }
                 />
             </div>
             

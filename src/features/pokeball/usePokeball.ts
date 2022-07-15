@@ -10,8 +10,14 @@ export const usePokeball = () => {
         dispatch(setPokeball(newPokeball))
     }
 
+    const closePokeball = () => {
+        const newPokeball =  ''
+        dispatch(setPokeball(newPokeball))
+    }
+
     return {
         pokeball,
         togglePokeball,
+        closePokeball,
     }
 }

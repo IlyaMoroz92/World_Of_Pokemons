@@ -12,12 +12,12 @@ import {  useBurger } from './features/burger/useBurger'
 
 function App() {
   const {theme} = useTheme()
-  const {pokeball} = usePokeball()
+  const {pokeball, closePokeball} = usePokeball()
   const {burger, closeBurger} = useBurger()
 
 
   return (
-    <div className='App' onClick={closeBurger}>
+    <div className='App' onClick={() =>{closeBurger(); closePokeball()}}>
       <div className="header">
         <Header/>
         </div>
