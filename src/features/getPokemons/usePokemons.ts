@@ -1,5 +1,6 @@
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import { fetchPokemons, likePokemon, pokeballPokemon } from "./pokemonsSlice";
+import { IPokemon } from "../getOnePokemon/pokemonOneSlice";
+import { fetchPokemons, likePokemon, pokeballPokemon, sortIdPokemons, sortNamePokemons } from "./pokemonsSlice";
 
 export const usePokemons = () => {
     const pokemons = useAppSelector( state => state.pokemons.content)
@@ -10,6 +11,14 @@ export const usePokemons = () => {
 
     const fetchNextPokemons = (page: number) => {
         dispatch(fetchPokemons(page))
+    }
+
+    const getSortIdPokemons = () => {
+        dispatch(sortIdPokemons())
+    }
+
+    const getSortNamePokemons = () => {
+        dispatch(sortNamePokemons())
     }
 
     const onLikePokemon = (id: number) => {
@@ -30,6 +39,8 @@ export const usePokemons = () => {
         onPokeballPokemon,
         getInfoPokemon,
         fetchNextPokemons,
+        getSortIdPokemons,
+        getSortNamePokemons,
     }
 }
 

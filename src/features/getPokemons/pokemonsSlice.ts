@@ -75,7 +75,6 @@ export const pokemonsSlice = createSlice({
                     state.isFavoritePokemon = [action.payload, ...state.isFavoritePokemon]
                 }
                 if(state.pokemonsInfo) {
-                    
                     state.pokemonsInfo = state.pokemonsInfo.map(pokemon => state.isFavoritePokemon.some(id => id === pokemon.id) ? {...pokemon, like: true} : {...pokemon, like: false} )
                 }
                 
@@ -92,6 +91,23 @@ export const pokemonsSlice = createSlice({
                     state.pokemonsInfo = state.pokemonsInfo.map(pokemon => state.isPokeballPokemon.some(id => id === pokemon.id) ? {...pokemon, pokeball: true} : {...pokemon, pokeball: false} )
                 }
         },
+        sortIdPokemons: (state) => {
+                if(state.pokemonsInfo) {
+                    state.pokemonsInfo = state.pokemonsInfo.sort((a: any, b: any) => a.id - b.id)
+                }
+        },
+
+        sortNamePokemons: (state) => {
+                if(state.pokemonsInfo) {
+                    state.pokemonsInfo = state.pokemonsInfo.sort((a: any, b: any) => {
+                        if (a.name > b.name) {
+                            return 1; }
+                        if (a.name < b.name) {
+                            return -1; }
+                        return 0;
+                    })
+                }
+        },
     },
 })
 
@@ -102,6 +118,8 @@ export const {
     fetchPokemonsInfoSuccess, 
     fetchPokemonsInfoFailure,
     likePokemon,
-    pokeballPokemon} = pokemonsSlice.actions
+    pokeballPokemon,
+    sortIdPokemons,
+    sortNamePokemons} = pokemonsSlice.actions
 
 export default pokemonsSlice.reducer

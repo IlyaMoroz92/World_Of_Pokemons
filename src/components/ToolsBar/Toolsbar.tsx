@@ -64,7 +64,7 @@ export const Toolsbar = (props: ToolsbarProps) => {
                     </label>
                 </form>
             </div>
-            <div className="sort">
+            <div className="toolsbar__sort">
             <select className={`toolsbar__select toolsbar__select--${theme}`}> Sort
                 <option value="id">Id</option>
                 <option value="id">Name</option>

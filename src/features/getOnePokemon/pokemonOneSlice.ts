@@ -7,7 +7,7 @@ export interface IPokemon  {
     like?: boolean,
     pokeball?: boolean,
     sprites?: any
-    weight?: number
+    weight?: number | undefined
     height?: number
     types?: any
     species?: any
