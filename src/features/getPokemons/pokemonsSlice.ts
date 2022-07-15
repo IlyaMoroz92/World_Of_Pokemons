@@ -67,6 +67,7 @@ export const pokemonsSlice = createSlice({
                 state.pokemonsInfo = state.pokemonsInfo.map(pokemon => pokemon.id === action.payload ? {...pokemon, pokeball: !pokemon.pokeball} : pokemon)
             }
         }, */
+        
         likePokemon: (state, action: PayloadAction<number>) => {
             if(state.pokemonsInfo) {
                 if(state.isFavoritePokemon.some(id => id === action.payload)) {
