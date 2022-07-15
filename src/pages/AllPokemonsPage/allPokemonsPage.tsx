@@ -8,8 +8,6 @@ import { IPokemon } from '../../features/getOnePokemon/pokemonOneSlice';
 import { useTheme } from '../../features/theme/useTheme'
 
 
-
-
 export const AllPokemons: any = () => {
 
     const {theme} = useTheme()

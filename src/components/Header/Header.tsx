@@ -33,7 +33,11 @@ export const Header = (props: HeaderProps) => {
                 <Button
                     icon={burger ==='active' ? <BurgerClose /> : <BurgerOpen/>}
                     className='burger'
-                    onClick={toggleBurger}
+                    onClick={e => {
+                        e.stopPropagation();
+                        toggleBurger()
+                        }
+                    }
                 />
             </div>
             <div className="header__theme">

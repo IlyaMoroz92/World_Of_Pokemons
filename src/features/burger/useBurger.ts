@@ -10,8 +10,14 @@ export const useBurger = () => {
         dispatch(setBurger(newBurger))
     }
 
+    const closeBurger = () => {
+        const newBurger = ''
+        dispatch(setBurger(newBurger))
+    }
+
     return {
         burger,
         toggleBurger,
+        closeBurger,
     }
 }

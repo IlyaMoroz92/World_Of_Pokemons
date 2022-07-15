@@ -51,7 +51,6 @@ export const usePokemons = () => {
         getSortIdPokemonsLess,
         getSortNamePokemonsMore,
         getSortNamePokemonsLess,
-
     }
 }
 

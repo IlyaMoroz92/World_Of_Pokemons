@@ -74,8 +74,6 @@ export const SignInPage = () => {
         let Input: any = inputEmail.current
         Input.focus() 
     }, [valueEmail])
-
-    console.log(login);
     
     return (
         <>
@@ -87,7 +85,6 @@ export const SignInPage = () => {
                     type='email'
                     placeholder='Enter your email'
                     onChange={changeInputEmail}
-                    /* errorMessage={errorEmail} */
                     ref={inputEmail}
                 />
                 <Input

@@ -27,11 +27,6 @@ export const Toolsbar = (props: ToolsbarProps) => {
 
     const {pokemonsInfo, getSortIdPokemonsMore, getSortIdPokemonsLess, getSortNamePokemonsMore, getSortNamePokemonsLess} = usePokemons()
 
-
-/*     useEffect(() => {
-        sortIdPokemonsMore()
-    }, [pokemonsInfo]) */
-
     const sortIdPokemonsMore = (): void => {
         getSortIdPokemonsMore()
     }

@@ -13,10 +13,11 @@ import {  useBurger } from './features/burger/useBurger'
 function App() {
   const {theme} = useTheme()
   const {pokeball} = usePokeball()
-  const {burger} = useBurger()
+  const {burger, closeBurger} = useBurger()
+
 
   return (
-    <div className='App'>
+    <div className='App' onClick={closeBurger}>
       <div className="header">
         <Header/>
         </div>
