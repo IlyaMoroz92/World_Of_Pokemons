@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/World_Of_Pokemons/static/css/main.8b32d9d7.css",
-    "main.js": "/World_Of_Pokemons/static/js/main.b1c6e5c6.js",
-    "static/js/787.61df1873.chunk.js": "/World_Of_Pokemons/static/js/787.61df1873.chunk.js",
-    "static/media/logov1.svg": "/World_Of_Pokemons/static/media/logov1.5ecad67d281a9ff88bf6b7207af9db83.svg",
-    "static/media/pokeball.svg": "/World_Of_Pokemons/static/media/pokeball.4c56728d0ebd9ced42293f921378af1e.svg",
-    "static/media/Light.svg": "/World_Of_Pokemons/static/media/Light.d72b0e5930edcafd0f02ce2aa199b548.svg",
-    "static/media/Dark.svg": "/World_Of_Pokemons/static/media/Dark.e6c8419252cf37245ed3613ff0c499f9.svg",
-    "static/media/login.svg": "/World_Of_Pokemons/static/media/login.b9d4331a61c46ef361b7792f7a753702.svg",
-    "static/media/burgeropen.svg": "/World_Of_Pokemons/static/media/burgeropen.2e8b080c16d330d8c82f3b2e90f0f001.svg",
-    "static/media/burgerclose.svg": "/World_Of_Pokemons/static/media/burgerclose.069e609eeee92c475a2282aa2094f5f9.svg",
-    "static/media/Like.svg": "/World_Of_Pokemons/static/media/Like.efd7668b53071e82238da67e09ce0453.svg",
-    "index.html": "/World_Of_Pokemons/index.html",
-    "static/media/left.svg": "/World_Of_Pokemons/static/media/left.351fc3b20d780490697c642df2fb371a.svg",
-    "static/media/right.svg": "/World_Of_Pokemons/static/media/right.0c05bf30994f67c8ecff9f9ba867f571.svg",
-    "main.8b32d9d7.css.map": "/World_Of_Pokemons/static/css/main.8b32d9d7.css.map",
-    "main.b1c6e5c6.js.map": "/World_Of_Pokemons/static/js/main.b1c6e5c6.js.map",
-    "787.61df1873.chunk.js.map": "/World_Of_Pokemons/static/js/787.61df1873.chunk.js.map"
+    "main.css": "/static/css/main.cd87fc1e.css",
+    "main.js": "/static/js/main.f9edd683.js",
+    "static/js/787.61df1873.chunk.js": "/static/js/787.61df1873.chunk.js",
+    "static/media/logo.svg": "/static/media/logo.5ecad67d281a9ff88bf6b7207af9db83.svg",
+    "static/media/pokeball.svg": "/static/media/pokeball.4c56728d0ebd9ced42293f921378af1e.svg",
+    "static/media/Light.svg": "/static/media/Light.d72b0e5930edcafd0f02ce2aa199b548.svg",
+    "static/media/Dark.svg": "/static/media/Dark.e6c8419252cf37245ed3613ff0c499f9.svg",
+    "static/media/login.svg": "/static/media/login.b9d4331a61c46ef361b7792f7a753702.svg",
+    "static/media/burgeropen.svg": "/static/media/burgeropen.2e8b080c16d330d8c82f3b2e90f0f001.svg",
+    "static/media/burgerclose.svg": "/static/media/burgerclose.069e609eeee92c475a2282aa2094f5f9.svg",
+    "static/media/Like.svg": "/static/media/Like.efd7668b53071e82238da67e09ce0453.svg",
+    "index.html": "/index.html",
+    "static/media/left.svg": "/static/media/left.351fc3b20d780490697c642df2fb371a.svg",
+    "static/media/right.svg": "/static/media/right.0c05bf30994f67c8ecff9f9ba867f571.svg",
+    "main.cd87fc1e.css.map": "/static/css/main.cd87fc1e.css.map",
+    "main.f9edd683.js.map": "/static/js/main.f9edd683.js.map",
+    "787.61df1873.chunk.js.map": "/static/js/787.61df1873.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8b32d9d7.css",
-    "static/js/main.b1c6e5c6.js"
+    "static/css/main.cd87fc1e.css",
+    "static/js/main.f9edd683.js"
   ]
 }
